@@ -24,6 +24,20 @@
                                 @endif
                             </div>
                         </div>
+                        
+                        <div class="form-group row">
+                            <label for="givenname" class="col-md-4 col-form-label text-md-right">{{ __('Givenname') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control{{ $errors->has('givenname') ? ' is-invalid' : '' }}" name="givenname" value="{{ old('givenname') }}" required autofocus>
+
+                                @if ($errors->has('givenname'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('givenname') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
