@@ -22,6 +22,8 @@ class CreatePushMessagesTable extends Migration
             $table->foreign('rentableobject_id')->references('id')->on('rentable_objects');
             $table->timestamps();
         });
+        
+        
     }
 
     /**

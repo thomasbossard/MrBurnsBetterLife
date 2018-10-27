@@ -17,12 +17,6 @@ class CreateUserTypesTable extends Migration
             $table->increments('id');
             $table->enum('label', ['manager', 'tenant', 'groundkeeper']);
         });
-        
-        DB::table('user_types')->insert([
-            ['id' => 1, 'label' => "manager"],
-            ['id' => 2, 'label' => "tenant"],
-            ['id' => 3, 'label' => "groundkeeper"]
-        ]);
     }
 
     /**
