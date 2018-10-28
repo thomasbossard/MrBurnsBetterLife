@@ -19,16 +19,18 @@ Auth::routes();
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
-Route::get('/homescreen', 'PagesController@homescreen');
-Route::resource('posts', 'PostController');
+Route::get('/myobject', 'PagesController@myobject');
+
+
+
 Route::resource('rentableobjects', 'RentableObjectsController');
 Route::resource('pushmessages', 'PushMessagesController');
 Route::resource('formcontents', 'FormContentsController');
 Route::resource('messages', 'MessagesController');
-Route::resource('invoices', 'InvoivesController');
+Route::resource('invoices', 'InvoicesController');
 Route::resource('payments', 'PaymentsController');
 Route::resource('files', 'FilesController');
-Route::resource('usertypes', 'UserTypeController');
-Route::resource('users', 'UserController');
+Route::resource('usertypes', 'UserTypesController');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
