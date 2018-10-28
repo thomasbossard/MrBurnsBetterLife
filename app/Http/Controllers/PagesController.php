@@ -22,4 +22,9 @@ class PagesController extends Controller
         );
         return view('pages.services')-> with($data);
     }
+    
+      public function homescreen(){
+       $title = 'MyObject';
+       return view('pages.Tentant_Homescreen')-> with('titel', $title);
+    }
 }

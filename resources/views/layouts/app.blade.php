@@ -21,11 +21,42 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
+         <ul class="navbar-nav mr-auto">
+             <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+            
+         
+              <li class="nav-item">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    Home
+                </a> 
+              </li>
+                 
+                      
+                      <li class="nav-item">
+                <div class="container">
+                <a class="navbar-brand" href="{{ url('/about') }}">
+                    About
+                </a> 
+                </li>
+                <li class="nav-item">
+              <div class="container">
+                <a class="navbar-brand" href="{{ url('/services') }}">
+                    Services
                 </a>
+                </li> 
+                
+                    <li class="nav-item">
+              <div class="container">
+                <a class="navbar-brand" href="{{ url('/homescreen') }}">
+                    myObject
+                </a>
+                </li> 
+         
+                  
+              
+                      
+                 
+            
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -70,6 +101,7 @@
                     </ul>
                 </div>
             </div>
+                       </ul>
         </nav>
 
         <main class="py-4">
