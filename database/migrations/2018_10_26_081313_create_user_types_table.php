@@ -13,7 +13,7 @@ class CreateUserTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_types', function (Blueprint $table) {
+        Schema::create('usertypes', function (Blueprint $table) {
             $table->increments('id');
             $table->enum('label', ['manager', 'tenant', 'groundkeeper']);
         });

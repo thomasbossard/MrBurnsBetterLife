@@ -13,13 +13,13 @@ class InsertDataIntoTables extends Migration
      */
     public function up()
     {
-        DB::table('rentable_objects')->insert([
+        DB::table('rentableobjects')->insert([
             ['name' => "Wochenendwohnung", 'street' => "Wochenendstrasse", 'housenumber' => "69", 'zipcode' => "4001", 'city' => "Basel", 'costpermonth' => "1200", 'status' => ""],
             ['name' => "Apartement", 'street' => "Fliederstrasse", 'housenumber' => "13", 'zipcode' => "4800", 'city' => "Zofingen", 'costpermonth' => "1400", 'status' => ""],
             ['name' => "Loft-Wohnung", 'street' => "Biergasse", 'housenumber' => "3", 'zipcode' => "8000", 'city' => "Zürich", 'costpermonth' => "2200", 'status' => ""]           
         ]);
         
-        DB::table('user_types')->insert([
+        DB::table('usertypes')->insert([
             ['label' => "manager"],
             ['label' => "tenant"],
             ['label' => "groundkeeper"]
@@ -31,7 +31,7 @@ class InsertDataIntoTables extends Migration
             ['name' => "Cyrill", 'givenname' => "Füglister", 'email' => "cyrill.fueglister@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00"]
         ]);
         
-        DB::table('push_messages')->insert([
+        DB::table('pushmessages')->insert([
             ['text' => 'Hallo das ist die erste Testnachricht', 'date' => '2018-10-27 11:49:00', 'subject' => 'Testnachricht 1', 'rentableobject_id' => '1'],
             ['text' => 'Hallo das ist die zweite Testnachricht', 'date' => '2018-10-27 11:50:00', 'subject' => 'Testnachricht 2', 'rentableobject_id' => '1'],
             ['text' => 'Hallo das ist die dritte Testnachricht', 'date' => '2018-10-27 11:51:00', 'subject' => 'Testnachricht 3', 'rentableobject_id' => '2'],
@@ -56,7 +56,7 @@ class InsertDataIntoTables extends Migration
             ['openrentalamount' => "300", 'heatingexpensessettle' => "200", 'utilitybills' => "50"]
         ]);
         
-        DB::table('form_contents')->insert([
+        DB::table('formcontents')->insert([
             ['firstname' => "Murat", 'givenname' => "Kellici", 'email' => "murat.k@evian.ch", 'subject' => "Anfrage", 'text' => "Hallo ich will das Haus mieten", 'status' => ""],
             ['firstname' => "Max", 'givenname' => "Muster", 'email' => "muster@mail.com", 'subject' => "Test", 'text' => "Ich bin Max Muster", 'status' => ""],
             ['firstname' => "Heiri", 'givenname' => "Sohn", 'email' => "h.sohn@gmail.com", 'subject' => "Anfrage", 'text' => "Give me the house pls", 'status' => ""]

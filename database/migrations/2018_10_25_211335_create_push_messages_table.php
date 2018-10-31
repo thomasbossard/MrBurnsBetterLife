@@ -13,7 +13,7 @@ class CreatePushMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('push_messages', function (Blueprint $table) {
+        Schema::create('pushmessages', function (Blueprint $table) {
             $table->increments('id');
             $table->string('text');
             $table->date('date');

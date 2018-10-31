@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\RentableObject;
 
 class RentableObjectsController extends Controller
 {
@@ -13,7 +14,8 @@ class RentableObjectsController extends Controller
      */
     public function index()
     {
-        //
+     $rentableobjects = RentableObject::all();
+      return view('rentableobjects.index') ->with('rentableobjects', $rentableobjects);
     }
 
     /**
@@ -45,7 +47,7 @@ class RentableObjectsController extends Controller
      */
     public function show($id)
     {
-        //
+       return RentableObjectController::find($id); 
     }
 
     /**

@@ -44,13 +44,14 @@
                     Services
                 </a>
                 </li> 
-                
-                    <li class="nav-item">
+                   <li class="nav-item">
               <div class="container">
-                <a class="navbar-brand" href="{{ url('/homescreen') }}">
-                    myObject
+                <a class="navbar-brand" href="{{ url('/myobject') }}">
+                    MyObject
                 </a>
                 </li> 
+                
+           
          
                   
               
