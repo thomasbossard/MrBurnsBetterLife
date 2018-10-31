@@ -47,7 +47,7 @@ class RentableObjectsController extends Controller
      */
     public function show($id)
     {
-       return RentableObjectController::find($id); 
+       return RentableObject::find($id); 
     }
 
     /**
