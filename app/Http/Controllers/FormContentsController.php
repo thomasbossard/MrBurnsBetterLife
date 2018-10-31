@@ -23,6 +23,7 @@ class FormContentsController extends Controller
      */
     public function create()
     {
+        return view('formcontents.create');
         //
     }
 
@@ -34,6 +35,14 @@ class FormContentsController extends Controller
      */
     public function store(Request $request)
     {
+        $form = new \App\FormContent;
+        $form->firstname       = $request->firstname;
+        $form->givenname       = $request->givenname;
+        $form->email       = $request->email;
+        $form->subject       = $request->subject;
+        $form->text       = $request->text;
+        
+        $form->save();
         //
     }
 
