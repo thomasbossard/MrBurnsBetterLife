@@ -19,7 +19,7 @@ class CreatePushMessagesTable extends Migration
             $table->date('date');
             $table->string('subject');
             $table->unsignedInteger('rentableobject_id');
-            $table->foreign('rentableobject_id')->references('id')->on('rentable_objects');
+            $table->foreign('rentableobject_id')->references('id')->on('rentableobjects');
             $table->timestamps();
         });
         
