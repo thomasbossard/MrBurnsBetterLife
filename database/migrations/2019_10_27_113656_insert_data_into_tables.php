@@ -25,10 +25,16 @@ class InsertDataIntoTables extends Migration
             ['label' => "groundkeeper"]
         ]);
         
+           DB::table('invoices')->insert([
+            ['openrentalamount' => "500", 'heatingexpensessettle' => "200", 'utilitybills' => "100"],
+            ['openrentalamount' => "400", 'heatingexpensessettle' => "200", 'utilitybills' => "100"],
+            ['openrentalamount' => "300", 'heatingexpensessettle' => "200", 'utilitybills' => "50"]
+        ]);
+           
         DB::table('users')->insert([
-            ['name' => "Lukas", 'givenname' => "Kunz", 'email' => "lukas.kunz@zuehlke.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00"],
-            ['name' => "Thomas", 'givenname' => "Bossard", 'email' => "thomasbossard93@gmail.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00"],
-            ['name' => "Cyrill", 'givenname' => "Füglister", 'email' => "cyrill.fueglister@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00"]
+            ['name' => "Lukas", 'givenname' => "Kunz", 'email' => "lukas.kunz@zuehlke.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1", 'invoice_id' => "1"],
+            ['name' => "Thomas", 'givenname' => "Bossard", 'email' => "thomasbossard93@gmail.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "2", 'invoice_id' => "2"],
+            ['name' => "Cyrill", 'givenname' => "Füglister", 'email' => "cyrill.fueglister@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "3", 'invoice_id' => "3"]
         ]);
         
         DB::table('pushmessages')->insert([
@@ -50,11 +56,6 @@ class InsertDataIntoTables extends Migration
             ['user_id1' => 3, 'user_id2' => 1, 'message' => 'Hallo das ist eine Testnachricht', 'date' => '2018-10-27 11:51:00']
         ]);
         
-        DB::table('invoices')->insert([
-            ['openrentalamount' => "500", 'heatingexpensessettle' => "200", 'utilitybills' => "100"],
-            ['openrentalamount' => "400", 'heatingexpensessettle' => "200", 'utilitybills' => "100"],
-            ['openrentalamount' => "300", 'heatingexpensessettle' => "200", 'utilitybills' => "50"]
-        ]);
         
         DB::table('formcontents')->insert([
             ['firstname' => "Murat", 'givenname' => "Kellici", 'email' => "murat.k@evian.ch", 'subject' => "Anfrage", 'text' => "Hallo ich will das Haus mieten", 'status' => ""],
