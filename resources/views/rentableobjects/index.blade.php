@@ -12,7 +12,20 @@
 @endforeach
 
 @foreach ($invoice as $invoice)
-<h3> Du  Arm und schulden Burns: {{$invoice->openrentalamount}} Geld</h3>
+<h3> Du  Arm! Schulden Burns: {{$invoice->openrentalamount}} Geld</h3>
+@endforeach
+
+<br><br>
+ <ul class = "list-group">
+@foreach ($payment as $payment)
+  <li class="list-group-item"> <h3> Dini letzi mikrige Zahlige: {{$payment->amount}} Geld am {{date('d.m.Y', strtotime($payment->date))}} </h3></li>
+@endforeach
+
+            </ul>
+
+<br><br>
+@foreach ($pushmessage as $pushmessage)
+<h3> Nachrichten der Verwaltung: {{$pushmessage->text}} </h3>
 @endforeach
 
 

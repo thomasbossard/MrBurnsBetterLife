@@ -14,11 +14,9 @@ class RentableObjectsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-     
-        
+    public function index(){
     $id = Auth::id();
+    
     $rentableobject = DB::table('rentableobjects')
             ->join('users', 'rentableobjects.id', '=', 'users.rentableobject_id') 
             ->where('users.id', '=', $id)
@@ -41,9 +39,26 @@ class RentableObjectsController extends Controller
             ->where('users.usertype_id', '=', 2)
             ->select('invoices.*')
             ->get();
+    
+    $payment = DB::table('payments')
+            ->join('users', 'payments.user_id', '=', 'users.id') 
+            ->where('payments.user_id', '=', $id)
+            ->where('users.usertype_id', '=', 2)
+            ->orderBy('date', 'asc')
+            ->select('payments.*')
+           
+            ->get();
+    
+    $pushmessage = DB::table('pushmessages')
+            ->join('rentableobjects', 'rentableobjects.id', '=', 'pushmessages.rentableobject_id') 
+            ->join('users', 'rentableobjects.id', '=', 'users.rentableobject_id') 
+            ->where('users.id', '=', $id)
+            ->where('users.usertype_id', '=', 2)
+            ->select('pushmessages.*')
+            ->get();
+         
 
-
-      return view('rentableobjects.index', compact('manager', 'groundkeeper', 'rentableobject', 'invoice'));
+      return view('rentableobjects.index', compact('manager', 'groundkeeper', 'rentableobject', 'invoice', 'payment', 'pushmessage'));
     
         //      ->with('rentableobjects', $rentableobject);
       

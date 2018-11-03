@@ -45,9 +45,12 @@ class InsertDataIntoTables extends Migration
         ]);
         
         DB::table('payments')->insert([
-            ['amount' => '1200', 'date' => '2018-10-27 11:10:00' , 'user_id' => 1],
+            ['amount' => '1200', 'date' => '2018-07-27 11:10:00' , 'user_id' => 1],
             ['amount' => '2000', 'date' => '2018-10-27 11:11:00' , 'user_id' => 2],
-            ['amount' => '500', 'date' => '2018-10-27 11:12:00' , 'user_id' => 3]
+            ['amount' => '500', 'date' => '2018-10-27 11:12:00' , 'user_id' => 3],
+            ['amount' => '500', 'date' => '2018-08-28 11:12:00' , 'user_id' => 1],
+            ['amount' => '600', 'date' => '2018-10-10 11:12:00' , 'user_id' => 1],
+            ['amount' => '1800', 'date' => '2018-09-30 11:12:00' , 'user_id' => 1],
         ]);
         
         DB::table('messages')->insert([
