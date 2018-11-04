@@ -27,29 +27,38 @@
          
               <li class="nav-item">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Home
+                    Startseite
                 </a> 
               </li>
                  
                       
-                      <li class="nav-item">
+              <li class="nav-item">
                 <div class="container">
                 <a class="navbar-brand" href="{{ url('/about') }}">
-                    About
-                </a> 
-                </li>
-                <li class="nav-item">
-              <div class="container">
+                    Über uns
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <div class="container">
+                <a class="navbar-brand" href="{{ url('/rentableobjects') }}">
+                    Objekte
+                </a>
+              </li>
+                
+              <li class="nav-item">
+                <div class="container">
                 <a class="navbar-brand" href="{{ url('/services') }}">
                     Services
                 </a>
-                </li> 
-                   <li class="nav-item">
-              <div class="container">
+              </li> 
+              
+              <li class="nav-item">
+                <div class="container">
                 <a class="navbar-brand" href="{{ url('/myobject') }}">
                     MyObject
                 </a>
-                </li> 
+              </li> 
                 
            
          
@@ -108,6 +117,6 @@
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
+    </div>                    
 </body>
 </html>
