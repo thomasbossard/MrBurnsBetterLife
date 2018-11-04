@@ -13,6 +13,7 @@ class FormContentsController extends Controller
      */
     public function index()
     {
+        return view('pages.formcontents');
         //
     }
 
