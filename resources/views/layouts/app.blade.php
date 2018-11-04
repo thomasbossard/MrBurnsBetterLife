@@ -18,7 +18,7 @@
 <body>
     <div id="app">
          
-        <section class="portfolio-block block-intro">
+        <section class="portfolio-block block-intro" style="padding: 50px;">
             <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
                 <div class="container"><a class="navbar-brand logo" href="#">Mr Burns Betterlife AG</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                     <div
@@ -71,7 +71,7 @@
         <main class="py-4">
             @yield('content')
         </main>
-                      
+          
     <script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
     <script src="{{ URL::asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
