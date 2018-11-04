@@ -56,7 +56,7 @@
               <li class="nav-item">
                 <div class="container">
                 <a class="navbar-brand" href="{{ url('/myobject') }}">
-                    MyObject
+                    Mein Objekt
                 </a>
               </li> 
                 
