@@ -20,12 +20,12 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 Route::get('/myobject', 'PagesController@myobject');
-
+Route::get('/contact', 'FormContentsController@index');
+Route::post('/contact',  'FormContentsController@store'); 
 
 
 Route::resource('rentableobjects', 'RentableObjectsController');
 Route::resource('pushmessages', 'PushMessagesController');
-Route::resource('formcontents', 'FormContentsController');
 Route::resource('messages', 'MessagesController');
 Route::resource('invoices', 'InvoicesController');
 Route::resource('payments', 'PaymentsController');

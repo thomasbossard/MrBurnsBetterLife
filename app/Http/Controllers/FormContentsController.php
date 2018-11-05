@@ -45,6 +45,8 @@ class FormContentsController extends Controller
         
         $form->save();
         //
+        return redirect()->back()->with('message', 'Vielen Dank für die Nachricht. Wir werden uns schnellstmöglich bei Ihnen melden!');
+	
     }
 
     /**
