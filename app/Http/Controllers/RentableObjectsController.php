@@ -15,6 +15,8 @@ class RentableObjectsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
+        
+        if (Auth::check()) {
     $id = Auth::id();
     
     $rentableobject = DB::table('rentableobjects')
@@ -58,7 +60,12 @@ class RentableObjectsController extends Controller
             ->get();
          
 
-      return view('rentableobjects.index', compact('manager', 'groundkeeper', 'rentableobject', 'invoice', 'payment', 'pushmessage'));
+      return view('myobject.index', compact('manager', 'groundkeeper', 'rentableobject', 'invoice', 'payment', 'pushmessage'));
+      
+      } else {
+          
+           return view('pages.error');
+      }
     
         //      ->with('rentableobjects', $rentableobject);
       

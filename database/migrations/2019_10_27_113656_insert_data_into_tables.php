@@ -34,7 +34,10 @@ class InsertDataIntoTables extends Migration
         DB::table('users')->insert([
             ['name' => "Lukas", 'givenname' => "Kunz", 'email' => "lukas.kunz@zuehlke.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1", 'invoice_id' => "1"],
             ['name' => "Thomas", 'givenname' => "Bossard", 'email' => "thomasbossard93@gmail.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "2", 'invoice_id' => "2"],
-            ['name' => "Cyrill", 'givenname' => "Füglister", 'email' => "cyrill.fueglister@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "3", 'invoice_id' => "3"]
+            ['name' => "Cyrill", 'givenname' => "Füglister", 'email' => "cyrill.fueglister@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "3", 'invoice_id' => "3"],
+            ['name' => "Cletus", 'givenname' => "Spuckler", 'email' => "Cletus.Spuckler@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "3", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1", 'invoice_id' => "1"],
+            ['name' => "Lisa", 'givenname' => "Simpson", 'email' => "lisa.simpson@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "1", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1", 'invoice_id' => "1"]
+            
         ]);
         
         DB::table('pushmessages')->insert([

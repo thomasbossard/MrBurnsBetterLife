@@ -19,7 +19,7 @@ Auth::routes();
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
-Route::get('/myobject', 'PagesController@myobject');
+Route::get('/myobject', 'RentableObjectsController@index');
 Route::get('/contact', 'FormContentsController@index');
 Route::post('/contact',  'FormContentsController@store'); 
 

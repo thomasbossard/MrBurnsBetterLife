@@ -27,7 +27,7 @@
                         class="collapse navbar-collapse" id="navbarNav">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item" role="presentation"><a class="nav-link" href="/">Startseite</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="rentableobjects">Objekte</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="/">Objekte</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link" href="about">Über uns</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link" href="contact">Kontakt</a></li>
                             
