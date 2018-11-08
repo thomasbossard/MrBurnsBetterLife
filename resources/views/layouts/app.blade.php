@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="{{ URL::asset('assets/fonts/fontawesome-all.min.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('assets/fonts/ionicons.min.css')}}">
-    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/Contact-Form-Clean.css')}}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/Header-Blue.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/tenant_font_design.css')}}">
 </head>
