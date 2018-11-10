@@ -21,8 +21,9 @@ Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 Route::get('/myobject', 'RentableObjectsController@index');
 Route::get('/contact', 'FormContentsController@index');
-Route::post('/contact',  'FormContentsController@store'); 
-
+Route::post('/contact',  'FormContentsController@store');
+Route::get('/allocateuser', 'AllocateUserController@index');
+Route::post('/allocateuser', 'AllocateUserController@store');
 
 Route::resource('rentableobjects', 'RentableObjectsController');
 Route::resource('pushmessages', 'PushMessagesController');
