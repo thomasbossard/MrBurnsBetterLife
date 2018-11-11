@@ -17,7 +17,11 @@ class RentableObjectsController extends Controller
     public function index(){
         
         if (Auth::check()) {
-    $id = Auth::id();
+           $user = Auth::user();
+           
+           if ($user->usertype_id == 2){
+   
+       $id = Auth::id();
     
     $rentableobject = DB::table('rentableobjects')
             ->join('users', 'rentableobjects.id', '=', 'users.rentableobject_id') 
@@ -61,7 +65,16 @@ class RentableObjectsController extends Controller
          
 
       return view('myobject.index', compact('manager', 'groundkeeper', 'rentableobject', 'invoice', 'payment', 'pushmessage'));
-      
+           
+      } else if ($user->usertype_id == 3){
+                
+         return view('work.index');      
+                
+      } else if ($user->usertype_id == 1){
+                      
+         return view('manage.index');        
+            }
+            
       } else {
           
            return view('pages.error');

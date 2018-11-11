@@ -20,6 +20,8 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 Route::get('/myobject', 'RentableObjectsController@index');
+Route::get('/manage', 'RentableObjectsController@index');
+Route::get('/work', 'RentableObjectsController@index');
 Route::get('/contact', 'FormContentsController@index');
 Route::post('/contact',  'FormContentsController@store');
 Route::get('/allocateuser', 'AllocateUserController@index');
