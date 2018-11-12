@@ -19,22 +19,13 @@ Auth::routes();
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
-Route::get('/myobject', 'RentableObjectsController@index');
-Route::get('/manage', 'RentableObjectsController@index');
-Route::get('/work', 'RentableObjectsController@index');
+Route::get('/myobject', 'ObjectController@index');
+Route::get('/manage', 'ManagerController@index');
+Route::get('/work', 'WorkController@index');
 Route::get('/contact', 'FormContentsController@index');
 Route::post('/contact',  'FormContentsController@store');
 Route::get('/allocateuser', 'AllocateUserController@index');
 Route::post('/allocateuser', 'AllocateUserController@store');
 Route::post('/removeallocation', 'AllocateUserController@removeallocation');
-
-Route::resource('rentableobjects', 'RentableObjectsController');
-Route::resource('pushmessages', 'PushMessagesController');
-Route::resource('messages', 'MessagesController');
-Route::resource('invoices', 'InvoicesController');
-Route::resource('payments', 'PaymentsController');
-Route::resource('files', 'FilesController');
-Route::resource('usertypes', 'UserTypesController');
-
-
+Route::get('/rentableobjects', 'RentableObjectsController@index');
 Route::get('/home', 'HomeController@index')->name('home');
