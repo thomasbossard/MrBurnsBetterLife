@@ -15,9 +15,8 @@ class WorkController extends Controller
                return view('work.index');
            }
            else {
-               return view('pages.error');
+               return view('pages.error')->with('errormessage','Kein Zugriff auf diese Seite!');
            }
         }
-        
     }
 }
