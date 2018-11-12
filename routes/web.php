@@ -26,6 +26,7 @@ Route::get('/contact', 'FormContentsController@index');
 Route::post('/contact',  'FormContentsController@store');
 Route::get('/allocateuser', 'AllocateUserController@index');
 Route::post('/allocateuser', 'AllocateUserController@store');
+Route::post('/removeallocation', 'AllocateUserController@removeallocation');
 
 Route::resource('rentableobjects', 'RentableObjectsController');
 Route::resource('pushmessages', 'PushMessagesController');
