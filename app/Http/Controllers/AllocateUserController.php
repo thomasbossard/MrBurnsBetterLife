@@ -16,12 +16,18 @@ class AllocateUserController extends Controller
      */
     public function index()
     {
-        if (Auth::check()) {
-                
+        if (Auth::check() and User::find(Auth::id())->usertype_id == 1) {
+            $users_and_objects = DB::table('rentableobjects')
+                        ->join('users', 'rentableobjects.id', '=', 'users.rentableobject_id')
+                        ->select('rentableobjects.name as objectname', 'users.name', 'users.givenname', 'users.id')
+                        ->get();
+            
+            #alle nicht zugewiesenen user holen
             $unallocatedusers = DB::table('users')
                     ->whereNull('rentableobject_id')
                     ->get();
             
+            #allocatedobjects wird gebraucht, um nachher alle nicht zugewiesenen objekte zu holen (unallocatedobjects)
             $allocatedobjects = DB::table('users')
                     ->whereNotNull('rentableobject_id')
                     ->get();
@@ -32,12 +38,12 @@ class AllocateUserController extends Controller
                 array_push($allocatedobjects_array, $object->rentableobject_id);
             }
             
-            
+            #hole alle nicht zugewiesenen objekte mit "whereNotIn"
             $unallocatedobjects = DB::table('rentableobjects')
                     ->whereNotIn('id', $allocatedobjects_array)
                     ->get();
             
-            return view('pages.allocateUser', compact('unallocatedusers', 'unallocatedobjects'));
+            return view('pages.allocateUser', compact('unallocatedusers', 'unallocatedobjects', 'users_and_objects'));
         } else {
             return view('pages.error');
         }
@@ -62,9 +68,30 @@ class AllocateUserController extends Controller
      */
     public function store(Request $request)
     {
+        
+        $user = User::find($request->user_id);
+        
+        $user->rentableobject_id = $request->object_id;
+        
+        $user->save();
+        
         return redirect()->back()->with('message', 'Zuweisung gespeichert');
     }
+    
+    public function removeallocation(Request $request)
+    {
+        if($request->filled('id')){
+            $user = User::find($request->id);
+        
+            $user->rentableobject_id = null;
 
+            $user->save();
+
+            return redirect()->back()->with('message', 'Zuweisung aufgehoben');
+        } else {
+            return redirect()->back();
+        }
+    }
     /**
      * Display the specified resource.
      *
