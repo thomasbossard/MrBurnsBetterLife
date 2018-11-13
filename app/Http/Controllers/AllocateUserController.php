@@ -43,9 +43,9 @@ class AllocateUserController extends Controller
                     ->whereNotIn('id', $allocatedobjects_array)
                     ->get();
             
-            return view('pages.allocateUser', compact('unallocatedusers', 'unallocatedobjects', 'users_and_objects'));
+            return view('manage.allocateUser', compact('unallocatedusers', 'unallocatedobjects', 'users_and_objects'));
         } else {
-            return view('pages.error');
+            return view('pages.error')->with('errormessage', 'Kein Zugriff. Melden Sie sich bitte bei der Verwaltung wenn Sie das Gefühl haben, Zugriff zu benötigen.');
         }
         
     }

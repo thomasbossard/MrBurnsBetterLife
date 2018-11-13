@@ -64,9 +64,9 @@ class InsertDataIntoTables extends Migration
         
         
         DB::table('formcontents')->insert([
-            ['firstname' => "Murat", 'givenname' => "Kellici", 'email' => "murat.k@evian.ch", 'subject' => "Anfrage", 'text' => "Hallo ich will das Haus mieten", 'status' => ""],
-            ['firstname' => "Max", 'givenname' => "Muster", 'email' => "muster@mail.com", 'subject' => "Test", 'text' => "Ich bin Max Muster", 'status' => ""],
-            ['firstname' => "Heiri", 'givenname' => "Sohn", 'email' => "h.sohn@gmail.com", 'subject' => "Anfrage", 'text' => "Give me the house pls", 'status' => ""]
+            ['firstname' => "Murat", 'givenname' => "Kellici", 'email' => "murat.k@evian.ch", 'subject' => "Anfrage", 'text' => "Hallo ich will das Haus mieten"],
+            ['firstname' => "Max", 'givenname' => "Muster", 'email' => "muster@mail.com", 'subject' => "Test", 'text' => "Ich bin Max Muster"],
+            ['firstname' => "Heiri", 'givenname' => "Sohn", 'email' => "h.sohn@gmail.com", 'subject' => "Anfrage", 'text' => "Give me the house pls"]
         ]);
         
         //

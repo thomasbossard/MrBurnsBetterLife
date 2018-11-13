@@ -20,7 +20,7 @@ class CreateFormContentsTable extends Migration
             $table->string('email');
             $table->string('subject');
             $table->string('text');
-            $table->string('status')->default("");
+            $table->boolean('processed')->default(false);
             $table->timestamps();
         });
     }

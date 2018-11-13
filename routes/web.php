@@ -29,3 +29,5 @@ Route::post('/allocateuser', 'AllocateUserController@store');
 Route::post('/removeallocation', 'AllocateUserController@removeallocation');
 Route::get('/rentableobjects', 'RentableObjectsController@index');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/getmessages', 'FormContentsController@getMessages');
+Route::post('/processedform', 'FormContentsController@processform');

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\User;
+use App\FormContent;
 
 class FormContentsController extends Controller
 {
@@ -16,18 +19,7 @@ class FormContentsController extends Controller
         return view('pages.formcontents');
         //
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('formcontents.create');
-        //
-    }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -48,49 +40,30 @@ class FormContentsController extends Controller
         return redirect()->back()->with('message', 'Vielen Dank für die Nachricht. Wir werden uns schnellstmöglich bei Ihnen melden!');
 	
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function getMessages()
     {
+        if (Auth::check() and User::find(Auth::id())->usertype_id == 1) {
+            $allnewformcontents = FormContent::where('processed', "0")->get();
+            $allprocessedformcontents = FormContent::where('processed', "1")->get();
+            
+            return view('manage.formcontents')->with(compact('allnewformcontents', 'allprocessedformcontents'));
+        } else {
+            return view('pages.error')->with('errormessage', 'Kein Zugriff. Melden Sie sich bitte bei der Verwaltung wenn Sie das Gefühl haben, Zugriff zu benötigen.');
+        }
+        
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function processform(Request $request)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        if($request->filled('id')){
+            foreach ($request->id as $id){
+                $form = FormContent::find($id);
+                $form->processed = true;
+                $form->save();
+            }
+            return redirect()->back()->with('message', 'Nachrichten verarbeitet. Sie finden die Nachrichten nun unter "verarbeitete Nachrichten".');
+        } else {
+            return redirect()->back();
+        }
     }
 }
