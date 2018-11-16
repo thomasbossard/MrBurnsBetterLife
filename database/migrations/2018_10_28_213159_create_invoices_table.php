@@ -15,9 +15,11 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->increments('id');
-            $table->mediumInteger('openrentalamount');
-            $table->mediumInteger('heatingexpensessettle');
-            $table->mediumInteger('utilitybills');
+            $table->mediumInteger('amount');
+            $table->unsignedInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedInteger('type_id')->nullable();
+            $table->foreign('type_id')->references('id')->on('invoicetypes');
             $table->timestamps();
         });
     }

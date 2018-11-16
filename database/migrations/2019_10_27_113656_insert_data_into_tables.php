@@ -25,18 +25,18 @@ class InsertDataIntoTables extends Migration
             ['label' => "groundkeeper"]
         ]);
         
-           DB::table('invoices')->insert([
-            ['openrentalamount' => "500", 'heatingexpensessettle' => "200", 'utilitybills' => "100"],
-            ['openrentalamount' => "400", 'heatingexpensessettle' => "200", 'utilitybills' => "100"],
-            ['openrentalamount' => "300", 'heatingexpensessettle' => "200", 'utilitybills' => "50"]
+        DB::table('invoicetypes')->insert([
+            ['type' => "Miete"],
+            ['type' => "Nebenkosten"],
+            ['type' => "Heizkosten"]
         ]);
            
         DB::table('users')->insert([
-            ['name' => "Lukas", 'givenname' => "Kunz", 'email' => "lukas.kunz@zuehlke.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1", 'invoice_id' => "1"],
-            ['name' => "Thomas", 'givenname' => "Bossard", 'email' => "thomasbossard93@gmail.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "2", 'invoice_id' => "2"],
-            ['name' => "Cyrill", 'givenname' => "Füglister", 'email' => "cyrill.fueglister@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "3", 'invoice_id' => "3"],
-            ['name' => "Cletus", 'givenname' => "Spuckler", 'email' => "Cletus.Spuckler@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "3", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1", 'invoice_id' => "1"],
-            ['name' => "Lisa", 'givenname' => "Simpson", 'email' => "lisa.simpson@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "1", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1", 'invoice_id' => "1"]
+            ['name' => "Lukas", 'givenname' => "Kunz", 'email' => "lukas.kunz@zuehlke.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1"],
+            ['name' => "Thomas", 'givenname' => "Bossard", 'email' => "thomasbossard93@gmail.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "2"],
+            ['name' => "Cyrill", 'givenname' => "Füglister", 'email' => "cyrill.fueglister@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "3"],
+            ['name' => "Cletus", 'givenname' => "Spuckler", 'email' => "Cletus.Spuckler@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "3", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1"],
+            ['name' => "Lisa", 'givenname' => "Simpson", 'email' => "lisa.simpson@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "1", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1"]
             
         ]);
         
@@ -67,6 +67,12 @@ class InsertDataIntoTables extends Migration
             ['firstname' => "Murat", 'givenname' => "Kellici", 'email' => "murat.k@evian.ch", 'subject' => "Anfrage", 'text' => "Hallo ich will das Haus mieten"],
             ['firstname' => "Max", 'givenname' => "Muster", 'email' => "muster@mail.com", 'subject' => "Test", 'text' => "Ich bin Max Muster"],
             ['firstname' => "Heiri", 'givenname' => "Sohn", 'email' => "h.sohn@gmail.com", 'subject' => "Anfrage", 'text' => "Give me the house pls"]
+        ]);
+        
+        DB::table('invoices')->insert([
+            ['amount' => "500", 'user_id' => 1, 'type_id' => 1],
+            ['amount' => "400", 'user_id' => 1, 'type_id' => 1],
+            ['amount' => "300", 'user_id' => 1, 'type_id' => 1]
         ]);
         
         //
