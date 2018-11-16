@@ -41,35 +41,7 @@
             </div>
         </div>
     </section>
-    <section style="padding-bottom: 20px;">
-        <div class="table-responsive" style="width: 75%;">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Datum</th>
-                        <th>Getätigte Zahlung</th>
-                    </tr>
-                </thead>
-                <tbody>    
-                    {{$totalamount = 0}}
-                    @foreach ($payment as $payment)
-                    
-                    {{$totalamount = $totalamount + $payment->amount}}
-                        <tr>
-                            <td style="width: 35%;">{{date('d.m.Y', strtotime($payment->date))}}</td>
-                            <td style="width: 65%;">{{$payment->amount}} .- Franken</td>    
-                            
-                        </tr>
-                    @endforeach                    
-                 
-                    <tr>
-                        <td></td>
-                        <td><span style="text-decoration: underline;">{{$totalamount}}.- Franken</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
+    
     <section>
         <div class="row">
             <div class="col">

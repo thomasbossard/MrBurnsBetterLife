@@ -33,21 +33,15 @@ class ObjectController extends Controller
                         ->where('users.usertype_id', '=', 3)
                         ->get();
 
-                $invoice = DB::table('users')
-                        ->join('rentableobjects', 'rentableobjects.id', '=', 'users.rentableobject_id') 
-                        ->join('invoices', 'invoices.id', '=', 'users.invoice_id') 
-                        ->where('users.id', '=', $id)
-                        ->where('users.usertype_id', '=', 2)
-                        ->select('invoices.*')
+                $invoice = DB::table('invoices')
+                        ->join('invoicetypes', 'invoicetypes.id', '=', 'invoices.type_id')
+                        ->where('user_id', '=', $id)
+                        ->select('invoices.*', 'invoicetypes.type')
                         ->get();
 
                 $payment = DB::table('payments')
-                        ->join('users', 'payments.user_id', '=', 'users.id') 
-                        ->where('payments.user_id', '=', $id)
-                        ->where('users.usertype_id', '=', 2)
+                        ->where('user_id', '=', $id)
                         ->orderBy('date', 'asc')
-                        ->select('payments.*')
-
                         ->get();
 
                 $pushmessage = DB::table('pushmessages')

@@ -31,3 +31,4 @@ Route::get('/rentableobjects', 'RentableObjectsController@index');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/getmessages', 'FormContentsController@getMessages');
 Route::post('/processedform', 'FormContentsController@processform');
+Route::get('/invoices', 'InvoicesController@index');

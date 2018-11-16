@@ -70,9 +70,9 @@ class InsertDataIntoTables extends Migration
         ]);
         
         DB::table('invoices')->insert([
-            ['amount' => "500", 'user_id' => 1, 'type_id' => 1],
-            ['amount' => "400", 'user_id' => 1, 'type_id' => 1],
-            ['amount' => "300", 'user_id' => 1, 'type_id' => 1]
+            ['amount' => "500", 'description' => "Monatsrechnung Januar", 'date' => '2018-07-27 11:10:00' , 'user_id' => 2, 'type_id' => 1],
+            ['amount' => "400", 'description' => "Monatsrechnung Februar", 'date' => '2018-07-27 11:10:00' , 'user_id' => 2, 'type_id' => 1],
+            ['amount' => "300", 'description' => "Monatsrechnung März", 'date' => '2018-07-27 11:10:00' , 'user_id' => 2, 'type_id' => 1]
         ]);
         
         //

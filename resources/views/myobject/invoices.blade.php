@@ -15,14 +15,61 @@
                     <tr>
                         <th>Datum</th>
                         <th>Betrag</th>
+                        <th>Typ</th>
                         <th>Beschreibung</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($invoice as $invoice)
                     <tr>
-                        <td>Cell 1</td>
-                        <td>Cell 2</td>
-                        <td><a href="#">Link</a></td>
+                        <td>{{$invoice->date}}</td>
+                        <td>{{$invoice->amount}}</td>
+                        <td>{{$invoice->type}}</td>
+                        <td>{{$invoice->description}}</td>
+                    </tr>
+                    @endforeach
+                
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>offener Betrag</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section style="padding-bottom: 20px;">
+        <div class="table-responsive" style="width: 75%;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Getätigte Zahlung</th>
+                    </tr>
+                </thead>
+                <tbody>    
+                    {{$totalamount = 0}}
+                    @foreach ($payment as $payment)
+                    
+                    {{$totalamount = $totalamount + $payment->amount}}
+                        <tr>
+                            <td style="width: 35%;">{{date('d.m.Y', strtotime($payment->date))}}</td>
+                            <td style="width: 65%;">{{$payment->amount}} .- Franken</td>    
+                            
+                        </tr>
+                    @endforeach                    
+                 
+                    <tr>
+                        <td></td>
+                        <td><span style="text-decoration: underline;">{{$totalamount}}.- Franken</span></td>
                     </tr>
                 </tbody>
             </table>
