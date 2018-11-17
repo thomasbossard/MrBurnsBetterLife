@@ -37,7 +37,7 @@
                     </tr>
                     <tr>
                         <td>offener Betrag</td>
-                        <td></td>
+                        <td>{{$openamount}}.- Franken</td>
                         <td></td>
                         <td></td>
                     </tr>
@@ -56,10 +56,10 @@
                     </tr>
                 </thead>
                 <tbody>    
-                    {{$totalamount = 0}}
+                    
                     @foreach ($payment as $payment)
                     
-                    {{$totalamount = $totalamount + $payment->amount}}
+                    
                         <tr>
                             <td style="width: 35%;">{{date('d.m.Y', strtotime($payment->date))}}</td>
                             <td style="width: 65%;">{{$payment->amount}} .- Franken</td>    
@@ -69,7 +69,7 @@
                  
                     <tr>
                         <td></td>
-                        <td><span style="text-decoration: underline;">{{$totalamount}}.- Franken</span></td>
+                        <td><span style="text-decoration: underline;">{{$totalpaid}}.- Franken</span></td>
                     </tr>
                 </tbody>
             </table>
