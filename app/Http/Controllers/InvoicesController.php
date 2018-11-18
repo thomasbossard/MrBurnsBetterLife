@@ -7,6 +7,7 @@ use App\Invoice;
 use Illuminate\Support\Facades\DB;
 use Auth;
 use Storage;
+use Validator;
 
 class InvoicesController extends Controller
 {
@@ -62,8 +63,56 @@ class InvoicesController extends Controller
         }
     }
     
-    public function manage()
+    public function newinvoice()
     {
+        if (Auth::check()) {
+            $user = Auth::user();
+            
+            if ($user->usertype_id == 1){
+                
+                $users = DB::table('users')
+                        ->where('users.usertype_id', '=', 2)
+                        ->get();
+                
+                $invoicetypes = DB::table('invoicetypes')
+                        ->get();
+                
+                return view('manage.newinvoice', compact('users', 'invoicetypes'));
+                
+                
+            } else {
+                    return view('pages.error')->with('errormessage', 'Kein Haus zugewiesen. Melden Sie sich bitte bei der Verwaltung.');
+                }
+        } else {
+            return view('pages.nologinerror');
+        }        
+        
+    }
+    
+    public function storenewinvoice(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'fileupload' => 'required|file',
+            'amount' => 'required',
+            'description' => 'required'
+        ]);
+        if(!($validator->fails())){
+            $path = $request->file('fileupload')->store('public');
+
+            $invoice = new Invoice;
+            $invoice->amount  = $request->amount;
+            $invoice->description  = $request->description;
+            $invoice->date      = date('Y-m-d H:i:s');
+            $invoice->user_id    = $request->user_id;
+            $invoice->type_id    = $request->type_id;
+            $invoice->filepath    = $path;
+
+            $invoice->save();
+            //
+            return redirect()->back()->with('message', 'Neue Rechnung gespeichert!');
+        } else {
+            return redirect()->back()->with('message', 'Bitte alle Felder richtig ausfüllen!');
+        }
         
     }
     
