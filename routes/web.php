@@ -32,3 +32,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/getmessages', 'FormContentsController@getMessages');
 Route::post('/processedform', 'FormContentsController@processform');
 Route::get('/invoices', 'InvoicesController@index');
+Route::get('/downloadinvoice/{id}', 'InvoicesController@downloadinvoice');

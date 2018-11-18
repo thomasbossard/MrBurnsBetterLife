@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Invoice;
 use Illuminate\Support\Facades\DB;
 use Auth;
+use Storage;
 
 class InvoicesController extends Controller
 {
@@ -59,5 +60,16 @@ class InvoicesController extends Controller
         } else {
             return view('pages.nologinerror');
         }
+    }
+    
+    public function manage()
+    {
+        
+    }
+    
+    public function downloadinvoice($id)
+    {
+        $invoice = Invoice::find($id);
+        return Storage::download($invoice->filepath);
     }
 }

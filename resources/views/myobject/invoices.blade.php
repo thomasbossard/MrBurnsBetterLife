@@ -16,7 +16,7 @@
                         <th>Datum</th>
                         <th>Betrag</th>
                         <th>Typ</th>
-                        <th>Beschreibung</th>
+                        <th>Beschreibung und Download</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,7 +25,7 @@
                         <td>{{$invoice->date}}</td>
                         <td>{{$invoice->amount}}</td>
                         <td>{{$invoice->type}}</td>
-                        <td>{{$invoice->description}}</td>
+                        <td><a href="/downloadinvoice/{{$invoice->id}}">{{$invoice->description}}</a></td>
                     </tr>
                     @endforeach
                 
