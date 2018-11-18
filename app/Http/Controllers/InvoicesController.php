@@ -81,12 +81,11 @@ class InvoicesController extends Controller
                 
                 
             } else {
-                    return view('pages.error')->with('errormessage', 'Kein Haus zugewiesen. Melden Sie sich bitte bei der Verwaltung.');
+                    return view('pages.error')->with('errormessage', 'Keine Berechtigung. Melden Sie sich bitte bei der Verwaltung.');
                 }
         } else {
             return view('pages.nologinerror');
-        }        
-        
+        }     
     }
     
     public function storenewinvoice(Request $request)

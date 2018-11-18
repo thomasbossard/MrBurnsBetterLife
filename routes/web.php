@@ -35,3 +35,5 @@ Route::get('/invoices', 'InvoicesController@index');
 Route::get('/downloadinvoice/{id}', 'InvoicesController@downloadinvoice');
 Route::get('/newinvoice', 'InvoicesController@newinvoice');
 Route::post('/newinvoice', 'InvoicesController@storenewinvoice');
+Route::get('/newpayment', 'PaymentsController@newpayment');
+Route::post('/newpayment', 'PaymentsController@storenewpayment');

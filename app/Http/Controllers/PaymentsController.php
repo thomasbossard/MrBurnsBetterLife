@@ -3,82 +3,53 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Payment;
+use Illuminate\Support\Facades\DB;
+use Auth;
+use Validator;
 
 class PaymentsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    
+    public function newpayment()
     {
-        //
+        if (Auth::check()) {
+            $user = Auth::user();
+            
+            if ($user->usertype_id == 1){
+                
+                $users = DB::table('users')
+                        ->where('users.usertype_id', '=', 2)
+                        ->get();
+                
+                return view('manage.newpayment', compact('users'));
+                
+            } else {
+                    return view('pages.error')->with('errormessage', 'Keine Berechtigung. Melden Sie sich bitte bei der Verwaltung.');
+                }
+        } else {
+            return view('pages.nologinerror');
+        }     
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    
+    public function storenewpayment(Request $request)
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $validator = Validator::make($request->all(), [
+            'amount' => 'required'
+        ]);
+        if(!($validator->fails())){
+            
+            $payment = new Payment;
+            $payment->amount  = $request->amount;
+            $payment->user_id  = $request->user_id;
+            $payment->date      = date('Y-m-d H:i:s');
+            
+            $payment->save();
+            //
+            return redirect()->back()->with('message', 'Neue Zahlung gespeichert!');
+        } else {
+            return redirect()->back()->with('message', 'Bitte alle Felder richtig ausfüllen!');
+        }
+        
     }
 }
