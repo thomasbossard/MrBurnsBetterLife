@@ -20,16 +20,19 @@ class AllocateUserController extends Controller
             $users_and_objects = DB::table('rentableobjects')
                         ->join('users', 'rentableobjects.id', '=', 'users.rentableobject_id')
                         ->select('rentableobjects.name as objectname', 'users.name', 'users.givenname', 'users.id')
+                        ->where('users.usertype_id', '=', 2)
                         ->get();
             
             #alle nicht zugewiesenen user holen
             $unallocatedusers = DB::table('users')
                     ->whereNull('rentableobject_id')
+                    ->where('users.usertype_id', '=', 2)
                     ->get();
             
             #allocatedobjects wird gebraucht, um nachher alle nicht zugewiesenen objekte zu holen (unallocatedobjects)
             $allocatedobjects = DB::table('users')
                     ->whereNotNull('rentableobject_id')
+                    ->where('users.usertype_id', '=', 2)
                     ->get();
             
             #allocatedobjects ist eine Collection, diese muss zu einem Array gemacht werden
