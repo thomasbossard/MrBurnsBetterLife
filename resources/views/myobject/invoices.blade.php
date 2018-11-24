@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-
+<a href="/myobject">Zurück</a>
 
 <div class="card">
         <div class="card-body">

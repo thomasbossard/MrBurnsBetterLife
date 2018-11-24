@@ -22,7 +22,13 @@ class PaymentsController extends Controller
                         ->where('users.usertype_id', '=', 2)
                         ->get();
                 
-                return view('manage.newpayment', compact('users'));
+                $allunpaidinvoices = DB::table('invoices')
+                        ->join('users', 'users.id', '=', 'invoices.user_id')
+                        ->where('invoices.paid', '=', 0)
+                        ->select('invoices.*','users.name','users.givenname')
+                        ->get();
+                
+                return view('manage.newpayment', compact('users', 'allunpaidinvoices'));
                 
             } else {
                     return view('pages.error')->with('errormessage', 'Keine Berechtigung. Melden Sie sich bitte bei der Verwaltung.');
@@ -51,5 +57,19 @@ class PaymentsController extends Controller
             return redirect()->back()->with('message', 'Bitte alle Felder richtig ausfüllen!');
         }
         
+    }
+    
+    public function processinvoice(Request $request)
+    {
+        if($request->filled('id')){
+            foreach ($request->id as $id){
+                $form = \App\Invoice::find($id);
+                $form->paid = true;
+                $form->save();
+            }
+            return redirect()->back()->with('message', 'Rechnungen verarbeitet.');
+        } else {
+            return redirect()->back();
+        }
     }
 }

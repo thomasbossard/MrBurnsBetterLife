@@ -19,6 +19,7 @@ class CreateInvoicesTable extends Migration
             $table->string('description');
             $table->date('date');
             $table->string('filepath');
+            $table->boolean('paid')->default(false);
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedInteger('type_id')->nullable();

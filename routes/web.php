@@ -37,3 +37,4 @@ Route::get('/newinvoice', 'InvoicesController@newinvoice');
 Route::post('/newinvoice', 'InvoicesController@storenewinvoice');
 Route::get('/newpayment', 'PaymentsController@newpayment');
 Route::post('/newpayment', 'PaymentsController@storenewpayment');
+Route::post('/processinvoice', 'PaymentsController@processinvoice');
