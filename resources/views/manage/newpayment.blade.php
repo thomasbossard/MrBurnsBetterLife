@@ -26,7 +26,7 @@
     </form>
 @endif
 
-<h1>Nachrichten von Kontaktformular</h1>
+<h1>Unbezahlte Rechnungen</h1>
 
 @if(!$allunpaidinvoices->isEmpty())         
     <form action="/processinvoice" method="post">
