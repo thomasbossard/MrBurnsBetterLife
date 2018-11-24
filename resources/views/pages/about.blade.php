@@ -1,11 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Über uns</h4>
-        </div>
-    </div>
     <main class="page lanidng-page"></main>
     <div style="padding-bottom: 20px;">
         <div class="container">
@@ -19,26 +14,36 @@
             </div>
         </div>
     </div>
-    <div>
-        <div class="container m-auto">
-            <div class="row">
-                <div class="col-md-3"><img src="assets/img/mrburns.jpg" width="120" height="120" align="middle" class="rounded-circle img-fluid align-items-center align-self-center m-auto" />
-                    <p><strong>Mr. Burns</strong><br>Geschäftsführer<br>Alter: unbekannt<br>Motto: ausgezeichnet</p>
+    <div class="team-boxed">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Unsere Mitarbeiter</h2>
+            </div>
+            <div class="row people" style="padding-top: 0px;">
+                <div class="col-md-6 col-lg-4 item">
+                    <div class="box"><img class="rounded-circle" src="assets/img/mrburns.jpg">
+                        <h3 class="name">Mr. Burns</h3>
+                        <p class="title">Geschäftsführer</p>
+                        <p class="description">Alter: Unbekannt<br>Motto: Ausgezeichnet!</p>
+                    </div>
                 </div>
-                <div class="col-md-3"><img class="rounded-circle img-fluid" src="assets/img/smithers.jpg" width="120px" height="120px">
-                    <p><strong>Waylon Smithers</strong><br>Reinigungskraft<br>Alter: 45<br>Motto: Stets zu Diensten</p>
+                <div class="col-md-6 col-lg-4 item">
+                    <div class="box"><img class="rounded-circle" src="assets/img/lisasimpson.png">
+                        <h3 class="name">Lisa Simpson</h3>
+                        <p class="title">Verwaltung</p>
+                        <p class="description">Alter: 8<br>Motto: Carpe diem</p>
+                    </div>
                 </div>
-                <div class="col-md-3"><img class="rounded-circle img-fluid" src="assets/img/lisasimpson.png" width="120px" height="120px">
-                    <p><strong>Lisa Simpson</strong><br>Assistentin<br>Alter: 8<br>Motto: Carpe diem</p>
-                </div>
-                <div class="col"><img class="rounded-circle img-fluid" src="assets/img/cletus_spuckler.png" width="120px" height="120px">
-                    <p><strong>Cletus Spuckler</strong><br>Strahlenschutz<br>Alter: unbekannt<br>Motto: Beweis es!</p>
+                <div class="col-md-6 col-lg-4 item">
+                    <div class="box"><img class="rounded-circle" src="assets/img/cletus_spuckler.png">
+                        <h3 class="name">Cletus Spuckler</h3>
+                        <p class="title">Hauswart & Strahlenschutz</p>
+                        <p class="description">Alter: 37<br>Motto: Beweis es!</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div></div>
-
 
 
 

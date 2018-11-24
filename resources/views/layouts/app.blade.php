@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/Lightbox-Gallery.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/tenant_font_design.css')}}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/Team-Boxed.css')}}">
 </head>
 
 <body>
