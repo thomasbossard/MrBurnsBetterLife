@@ -17,6 +17,7 @@
                         <th>Betrag</th>
                         <th>Typ</th>
                         <th>Beschreibung und Download</th>
+                        <th>Bezahlt</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,6 +27,7 @@
                         <td>{{$invoice->amount}}</td>
                         <td>{{$invoice->type}}</td>
                         <td><a href="/downloadinvoice/{{$invoice->id}}">{{$invoice->description}}</a></td>
+                        <td>@if($invoice->paid == 1) Ja @endif @if($invoice->paid == 0) Nein @endif</td>
                     </tr>
                     @endforeach
                 
@@ -34,10 +36,12 @@
                         <td></td>
                         <td></td>
                         <td></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>offener Betrag</td>
                         <td>{{$openamount}}.- Franken</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                     </tr>
