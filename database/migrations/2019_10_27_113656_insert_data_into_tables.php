@@ -56,11 +56,7 @@ class InsertDataIntoTables extends Migration
             ['amount' => '1800', 'date' => '2018-09-30 11:12:00' , 'user_id' => 1],
         ]);
         
-        DB::table('messages')->insert([
-            ['user_id1' => 1, 'user_id2' => 2, 'message' => 'Hallo das ist eine Testnachricht', 'date' => '2018-10-27 11:49:00'],
-            ['user_id1' => 2, 'user_id2' => 1, 'message' => 'Hallo das ist eine Testnachricht', 'date' => '2018-10-27 11:50:00'],
-            ['user_id1' => 3, 'user_id2' => 1, 'message' => 'Hallo das ist eine Testnachricht', 'date' => '2018-10-27 11:51:00']
-        ]);
+    
         
         
         DB::table('formcontents')->insert([
@@ -73,6 +69,26 @@ class InsertDataIntoTables extends Migration
             ['amount' => "500", 'description' => "Monatsrechnung Januar", 'date' => '2018-07-27 11:10:00', 'filepath' => 'public/test.jpg', 'user_id' => 2, 'type_id' => 1],
             ['amount' => "400", 'description' => "Monatsrechnung Februar", 'date' => '2018-07-27 11:10:00', 'filepath' => 'public/test.jpg', 'user_id' => 2, 'type_id' => 1],
             ['amount' => "300", 'description' => "Monatsrechnung März", 'date' => '2018-07-27 11:10:00', 'filepath' => 'public/test.jpg', 'user_id' => 2, 'type_id' => 1]
+        ]);
+        
+             DB::table('friends')->insert([
+            ['user_id' => 1, 'friend_id' => 2],
+            ['user_id' => 1, 'friend_id' => 3],
+            ['user_id' => 1, 'friend_id' => 4]
+        ]);
+         
+        DB::table('chats')->insert([
+            ['user_id' => 1, 'friend_id' => 2, 'chat' => 'Hallo das ist eine Testnachricht'],
+            ['user_id' => 1, 'friend_id' => 3, 'chat' => 'Halljjo das ist eine Testnachricht'],
+            ['user_id' => 1, 'friend_id' => 4, 'chat' => 'gfh das ist eine Testnachricht'],
+            ['user_id' => 2, 'friend_id' => 1, 'chat' => 'Hallo das a eine Testnachricht'],
+            ['user_id' => 2, 'friend_id' => 1, 'chat' => 'Hallo das asdf eine Testnachricht'],
+            ['user_id' => 1, 'friend_id' => 2, 'chat' => 'Hallo das ist asdf Testnachricht'],
+            ['user_id' => 3, 'friend_id' => 2, 'chat' => 'Hallo das asdf eine asdf'],
+            ['user_id' => 1, 'friend_id' => 3, 'chat' => 'Hallghgfho das ist einfgh asdf'],
+            ['user_id' => 1, 'friend_id' => 4, 'chat' => 'Hallo bvcx ist eine Testnachricht'],
+            ['user_id' => 1, 'friend_id' => 2, 'chat' => 'Hallo xxcv ist eine Testnachricht']
+            
         ]);
         
         //

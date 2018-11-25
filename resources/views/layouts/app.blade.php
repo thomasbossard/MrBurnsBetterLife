@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="userId" content="{{ Auth::check() ? Auth::user()->id : 'null' }}">
     <title>Mr. Burns Betterlife AG</title>
     
     <!-- CSRF Token -->
@@ -20,16 +21,16 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/css/Lightbox-Gallery.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/tenant_font_design.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/Team-Boxed.css')}}">
+  
 </head>
 
-<body>
-    <div id="app">
-         
-        <section class="portfolio-block block-intro" style="padding: 50px;">
-            <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
-                <div class="container"><a class="navbar-brand logo" href="/">Mr Burns Betterlife AG</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                    <div
-                        class="collapse navbar-collapse" id="navbarNav">
+    <body>
+        <div id="app">
+            <section class="portfolio-block block-intro" style="padding: 50px;">
+                <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+                   <div class="container"><a class="navbar-brand logo" href="/">Mr Burns Betterlife AG</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                     <div 
+                         class="collapse navbar-collapse" id="navbarNav">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item" role="presentation"><a class="nav-link" href="/">Startseite</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link" href="rentableobjects">Objekte</a></li>
@@ -75,30 +76,30 @@
                                 </div>
                                 </li>
                             @endguest
-     
                         </ul>
-                </div>
-                </div>
+            </div>
+            </div>   
             </nav>
         </section>
-         
-    </div>
-      
+            
+ 
         <main class="py-4">
             @yield('content')
         </main>
-     
-    <footer class="page-footer">
+                
+                 <footer class="page-footer">
         <div class="container">
             <div class="links"><a href="about">Über uns</a><a href="contact">Kontakt</a><a href="rentableobjects">Objekte</a></div>
             <div class="social-icons"><a href="https://www.facebook.com" target="_blank"><i class="icon ion-social-facebook"></i></a><a href="https://www.instagram.com" target="_blank"><i class="icon ion-social-instagram-outline"></i></a><a href="https://www.twitter.com" target="_blank"><i class="icon ion-social-twitter"></i></a></div>
         </div>
     </footer>
-    
+
+        <!-- Scripts -->
     <script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{ URL::asset('/js/app.js') }}"></script>
     <script src="{{ URL::asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
     <script src="{{ URL::asset('assets/js/theme.js')}}"></script>
     
-</body>
+    </body>
 </html>

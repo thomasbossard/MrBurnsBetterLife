@@ -15,8 +15,43 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('chat', require('./components/Chat.vue'));
+Vue.component('chat-composer', require('./components/ChatComposer.vue'));
+Vue.component('onlineuser', require('./components/OnlineUser.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        chats: '',
+        onlineUsers: ''
+    },
+    created() {
+        const userId = $('meta[name="userId"]').attr('content');
+        const friendId = $('meta[name="friendId"]').attr('content');
+
+        if (friendId != undefined) {
+            axios.post('/chat/getChat/' + friendId).then((response) => {
+                this.chats = response.data;
+            });
+
+            Echo.private('Chat.' + friendId + '.' + userId)
+                .listen('BroadcastChat', (e) => {
+                    document.getElementById('ChatAudio').play();
+                    this.chats.push(e.chat);
+                });
+        }
+
+        if (userId != 'null') {
+            Echo.join('Online')
+                .here((users) => {
+                    this.onlineUsers = users;
+                })
+                .joining((user) => {
+                    this.onlineUsers.push(user);
+                })
+                .leaving((user) => {
+                    this.onlineUsers = this.onlineUsers.filter((u) => {u != user});
+                });
+        }
+    }
 });
