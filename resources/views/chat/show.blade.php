@@ -2,6 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <audio id="ChatAudio">
         <source src="{{ asset('sounds/chat.mp3') }}">
     </audio>

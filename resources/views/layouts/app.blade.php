@@ -77,16 +77,12 @@
                                 </li>
                             @endguest
                         </ul>
-                        
-
             </div>
-            </div>
-                  
+            </div>   
             </nav>
         </section>
-             
-                
-                
+            
+ 
         <main class="py-4">
             @yield('content')
         </main>
@@ -97,16 +93,13 @@
             <div class="social-icons"><a href="https://www.facebook.com" target="_blank"><i class="icon ion-social-facebook"></i></a><a href="https://www.instagram.com" target="_blank"><i class="icon ion-social-instagram-outline"></i></a><a href="https://www.twitter.com" target="_blank"><i class="icon ion-social-twitter"></i></a></div>
         </div>
     </footer>
-                
-      
 
         <!-- Scripts -->
     <script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{ URL::asset('/js/app.js') }}"></script>
     <script src="{{ URL::asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
     <script src="{{ URL::asset('assets/js/theme.js')}}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-   
     
     </body>
 </html>
