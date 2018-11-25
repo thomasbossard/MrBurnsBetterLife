@@ -1,10 +1,26 @@
 @extends('layouts.app')
 @section('content')
 
-<h1>Verwaltungs-Microservices (Links)</h1>
 
-<a href="allocateuser">User und Objekt Zuweisung</a><br>
-<a href="getmessages">Nachrichten von Kontaktformular</a><br>
-<a href="newinvoice">Neue Rechnung erfassen</a><br>
-<a href="newpayment">Neuen Zahlungseingang erfassen</a>
+<div class="container">
+        <h3>Verwalten</h3>
+    </div>
+    <div style="text-align:center">
+    <div class="article-list">
+        <div class="container">
+            <div class="intro"></div>
+            <div class="row articles">
+                <div class="col-sm-6 col-md-4 item"><a href="allocateuser"><img class="img-fluid" src="assets/img/house.svg"></a>
+                    <h4 class="name"><br><a href="allocateuser" class="action" style="color:black">User und Objektzuweisung</a><br><br></h4></div>
+                <div class="col-sm-6 col-md-4 item"><a href="getmessages"><img class="img-fluid" src="assets/img/messages.svg"></a>
+                    <h4 class="name"><br><a href="getmessages" class="action" style="color:black">Nachrichten Kontaktformular</a><br><br></h4></div>
+                <div class="col-sm-6 col-md-4 item"><a href="newinvoice"><img class="img-fluid" src="assets/img/invoice.svg"></a>
+                    <h4 class="name"><br><a href="newinvoice" class="action" style="color:black">Neue Rechnung erfassen</a><br><br></h4></div>
+                <div class="col-sm-6 col-md-4 item"><a href="newpayment"><img class="img-fluid" src="assets/img/receiving.svg"></a>
+                    <h4 class="name"><br><a href="newpayment" class="action" style="color:black">Neuen Zahlungseingang erfassen</a><br><br></h4></div>
+            </div>
+        </div>
+    </div>
+    </div>
+
 @endsection
