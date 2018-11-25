@@ -2,9 +2,6 @@
 @section('content')
 
 
-<div class="container">
-        <h3>Verwalten</h3>
-    </div>
     <div style="text-align:center">
     <div class="article-list">
         <div class="container">
