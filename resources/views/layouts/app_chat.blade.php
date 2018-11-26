@@ -23,14 +23,7 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/css/Team-Boxed.css')}}">
     
     @yield('css')
-    
-    <!-- Scripts -->
-    <script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
-    <script src="{{ URL::asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-    <script src="{{ URL::asset('assets/js/theme.js')}}"></script>
-    <script src="{{ URL::asset('/js/app.js') }}"></script>
-    
+        
     
 </head>
 
@@ -111,5 +104,11 @@
     
     </body>
     
+        <!-- Scripts -->
+    <script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{ URL::asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="{{ URL::asset('assets/js/theme.js')}}"></script>
+    <script src="{{ URL::asset('/js/app.js') }}"></script>
     
 </html>

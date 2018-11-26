@@ -52,7 +52,7 @@
                 <tbody>
                     <tr>
                         <td>
-                        <select name="user_id" form="newinvoice">
+                        <select class="browser-default custom-select" name="user_id" form="newinvoice">
                             @foreach ($users as $user)
                                 <option value="{{$user->id}}">{{$user->name}} {{$user->givenname}}</option>
                             @endforeach
@@ -60,7 +60,7 @@
                         </td>
                         
                         <td>
-                        <select name="type_id" form="newinvoice">
+                        <select class="browser-default custom-select" name="type_id" form="newinvoice">
                             @foreach ($invoicetypes as $invoicetype)
                                 <option value="{{$invoicetype->id}}">{{$invoicetype->type}}</option>
                             @endforeach
@@ -68,11 +68,11 @@
                         </td>
                         
                         <td>
-                            <input type="number" name="amount" form="newinvoice">
+                            <input class="form-control" type="number" name="amount" form="newinvoice">
                         </td>
                             
                         <td>
-                            <input type="text" name="description" form="newinvoice">
+                            <input class="form-control" type="text" name="description" form="newinvoice">
                         </td>
                     </tr>
                 </tbody>
