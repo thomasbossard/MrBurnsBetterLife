@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="panel-block field">
-        <div class="control">
+        <div class="abc">
             <input type="text" class="input" v-on:keyup.enter="sendChat" v-model="chat">
         </div>
         <div class="control auto-width">
@@ -43,9 +43,15 @@
         padding: 0;
     }
     input {
-        border-radius: 0;
-    }
+         border-radius: 0;
+        width: auto;
+        margin: 2px;
+      
+        }
+        
+   
     .auto-width {
         width: auto;
+        
     }
 </style>

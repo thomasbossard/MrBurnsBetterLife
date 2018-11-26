@@ -1,8 +1,8 @@
+
+
 <template lang="html">
-    <div class="is-pulled-right">
         <i class="fa fa-circle green" v-if="checkUser()"></i>
         <i class="fa fa-circle red" v-else></i>
-    </div>
 </template>
 
 <script>
@@ -19,6 +19,7 @@
 <style lang="css">
     .red {
         color: red;
+        
     }
     .green {
         color: green;

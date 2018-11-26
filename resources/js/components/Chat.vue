@@ -6,23 +6,28 @@
     .chat {
         width: 100%;
         padding: 20px;
-        box-shadow: inset 0 0 20px 0 grey;
+        box-shadow: inset 0 0 5px 0 grey;
         margin-bottom: 20px;
         border: 1px solid grey;
         max-height: 600px;
         overflow-x: auto;
     }
-    .chat .chat-right, .chat .chat-left {
-        max-width: 70%;
-        box-shadow: 0 0 8px 0px grey;
-        padding: 8px;
-        margin: 4px;
+    .chat-right, .chat .chat-left {
+    border: 2px solid #dedede;
+    background-color: lightgreen;
+    border-color: lightgreen;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
     }
     .chat-right {
         float: right;
+         border-color: lightblue;
+         background-color: lightblue;
     }
     .chat-left {
         float: left;
+        background-color: blue;
     }
     .no-message {
         height: 200px;
