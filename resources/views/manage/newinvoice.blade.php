@@ -1,4 +1,29 @@
 @extends('layouts.app')
+
+@section('js')
+
+<script>
+    const realFileBtn = document.getElementById("real-file");
+    const customBtn = document.getElementById("custom-button");
+    const customTxt = document.getElementById("custom-text");
+    
+    customBtn.addEventListener("click", function(){
+        realFileBtn.click();
+    });
+    
+    
+    realFileBtn.addEventListener("change", function(){
+       if (realFileBtn.value){
+           customTxt.innerHTML = realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+       } else{
+           customTxt.innerHTML = "Keine Datei ausgewählt.";
+       }
+    });
+    
+</script>
+
+@endsection
+
 @section('content')
 
 @if(session('message'))
@@ -54,17 +79,27 @@
             </table>
         </div>
     </div>
-    
 
-<div class="container">    
-    <input type="file" id="fileupload" name="fileupload" form="newinvoice">
-    
+
+
+<div class="container" style="margin-bottom: 25px;">    
+    <input type="file" id="real-file" hidden="hidden">
+    <button class="btn btn-primary" type="button" id="custom-button">Datei auswählen...</button>
+    <span id="custom-text">Keine Datei ausgewählt.</span>
+</div>
+
+
+
+<div class="container">
     <form action="/newinvoice" id="newinvoice" method="post" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        <input type="submit" value="Neue Rechnung erfassen">
+            {{ csrf_field() }}
+            <button class="btn btn-primary" type="submit">Rechnung erfassen</button>
     </form>
 </div>
 
 @endif
 
 @endsection
+
+
+
