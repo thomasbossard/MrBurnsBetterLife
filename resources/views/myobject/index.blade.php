@@ -20,13 +20,13 @@
                     <tr>
                         @foreach ($manager as $manager)
                         <td>Manager:</td>
-                        <td>{{$manager->givenname}} {{$manager->name}}</td>
+                        <td>{{$manager->name}} {{$manager->givenname}}</td>
                         @endforeach
                     </tr>
                     <tr>
                         @foreach ($groundkeeper as $groundkeeper)
                         <td>Hauswart:</td>
-                        <td>{{$groundkeeper->givenname}} {{$groundkeeper->name}}</td>
+                        <td>{{$groundkeeper->name}} {{$groundkeeper->givenname}}</td>
                         @endforeach
                     </tr>
                 </tbody>

@@ -34,7 +34,11 @@
                         <td>{{$line->objectname}}</td>
                         <td>{{$line->name}} </td>
                         <td>{{$line->givenname}}</td>
-                        <td><input type="radio" name="id" value="{{$line->id}}"></td>
+                        <td>
+                            <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input-radio" name="id" value="{{$line->id}}">
+                            </div>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -73,14 +77,14 @@
                 <tbody>
                     <tr>
                         <td>
-                            <select name="user_id" form="allocateform">
+                            <select class="browser-default custom-select" name="user_id" form="allocateform">
                                 @foreach ($unallocatedusers as $user)
                                     <option value="{{$user->id}}">{{$user->name}} {{$user->givenname}}</option>
                                 @endforeach
                             </select>                                                        
                         </td>
                         <td>
-                            <select name="object_id" form="allocateform">
+                            <select class="browser-default custom-select" name="object_id" form="allocateform">
                                 @foreach ($unallocatedobjects as $object)
                                     <option value="{{$object->id}}">{{$object->name}}</option>
                                 @endforeach

@@ -36,8 +36,38 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td>offener Betrag</td>
-                        <td>{{$openamount}}.- Franken</td>
+                        
+                
+                        <td>
+                            
+                            @if($openamount<0)
+                            <font color ="green">Offener Betrag</font>
+                            @endif
+                            
+                            @if($openamount>0)
+                            <font color ="red">Offener Betrag</font>
+                            @endif
+                            
+                            @if($openamount==0)
+                            <font color ="black">Offener Betrag</font>
+                            @endif
+                        
+                        </td>
+                        
+                        <td>
+                            @if($openamount<0)
+                            <font color ="green">{{$openamount}}.- Franken</font>
+                            @endif
+                            
+                            @if($openamount>0)
+                            <font color ="red">{{$openamount}}.- Franken</font>
+                            @endif
+                            
+                            @if($openamount==0)
+                            <font color ="black">{{$openamount}}.- Franken</font>
+                            @endif
+                        </td>
+                        
                         <td></td>
                         <td></td>
                         <td></td>

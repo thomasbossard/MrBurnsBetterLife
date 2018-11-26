@@ -21,7 +21,16 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/css/Lightbox-Gallery.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/tenant_font_design.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/Team-Boxed.css')}}">
-  
+    
+    @yield('css')
+    
+    <!-- Scripts -->
+    <script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{ URL::asset('/js/app.js') }}"></script>
+    <script src="{{ URL::asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="{{ URL::asset('assets/js/theme.js')}}"></script>
+    
 </head>
 
     <body>
@@ -86,20 +95,15 @@
         <main class="py-4">
             @yield('content')
         </main>
-                
-                 <footer class="page-footer">
+
+    @yield('js')
+                            
+    <footer class="page-footer">
         <div class="container">
             <div class="links"><a href="about">Über uns</a><a href="contact">Kontakt</a><a href="rentableobjects">Objekte</a></div>
             <div class="social-icons"><a href="https://www.facebook.com" target="_blank"><i class="icon ion-social-facebook"></i></a><a href="https://www.instagram.com" target="_blank"><i class="icon ion-social-instagram-outline"></i></a><a href="https://www.twitter.com" target="_blank"><i class="icon ion-social-twitter"></i></a></div>
         </div>
     </footer>
-
-        <!-- Scripts -->
-    <script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
-    <script src="{{ URL::asset('/js/app.js') }}"></script>
-    <script src="{{ URL::asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-    <script src="{{ URL::asset('assets/js/theme.js')}}"></script>
     
     </body>
 </html>
