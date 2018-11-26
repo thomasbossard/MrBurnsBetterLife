@@ -90,12 +90,14 @@
 
 
 
-<div class="container">
+<div class="container" style="margin-bottom: 25px;">
     <form action="/newinvoice" id="newinvoice" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <button class="btn btn-primary" type="submit">Rechnung erfassen</button>
     </form>
 </div>
+
+<div class="container"><a href="/manage" class="btn btn-primary">Zurück zu Verwalten...</a></div>
 
 @endif
 

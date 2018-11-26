@@ -26,13 +26,13 @@
                 <tbody>
                     <tr>
                         <td>
-                            <select name="user_id" form="newpayment">
+                            <select class="browser-default custom-select" name="user_id" form="newpayment">
                                 @foreach ($users as $user)
                                     <option value="{{$user->id}}">{{$user->name}} {{$user->givenname}}</option>
                                 @endforeach
                             </select>
                         </td>
-                        <td><input type="number" name="amount" form="newpayment"></td>
+                        <td><input class="form-control" type="number" name="amount" form="newpayment"></td>
                     </tr>
                 </tbody>
             </table>
@@ -79,16 +79,19 @@
                 </div>
             </div>                
                                
-            <div class="container"><button class="btn btn-primary" type="submit">Rechnung verarbeiten</button></div>
+            <div class="container" style="margin-bottom: 25px;"><button class="btn btn-primary" type="submit">Rechnung verarbeiten</button></div>
 
     </form>
 @endif
 
 
+
 @if($allunpaidinvoices->isEmpty())    
-    <div class="container">
+    <div class="container" style="margin-bottom: 25px;">
         Keine offenen Rechnungen.
     </div>
 @endif
+
+<div class="container"><a href="/manage" class="btn btn-primary">Zurück zu Verwalten...</a></div>
 
 @endsection

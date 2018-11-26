@@ -9,10 +9,11 @@
 
 <html>
 @if(!$users_and_objects->isEmpty())
-        
+
         <div class="container">
         <h3>Bestehende Zuweisungen</h3>
         </div>
+
         <form action="/removeallocation" method="post">
             {{ csrf_field() }}
             
@@ -36,8 +37,8 @@
                         <td>{{$line->givenname}}</td>
                         <td>
                             <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input-radio" name="id" value="{{$line->id}}">
-                            </div>
+                                <input type="radio" class="custom-control-input-radio" name="id" value="{{$line->id}}">
+                            </div>                            
                         </td>
                     </tr>
                     @endforeach
@@ -101,6 +102,8 @@
         <div class="container"><button class="btn btn-primary" type="submit">Zuweisung übernehmen</button></div>
     </form>
 @endif
+
+<div class="container" style="padding-top: 25px;"><a href="/manage" class="btn btn-primary">Zurück zu Verwalten...</a></div>
 
 </html>
 

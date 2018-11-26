@@ -1,7 +1,30 @@
 @extends('layouts.app')
 @section('content')
-      
-    <div class="container" style="margin-bottom: 50px;">
+          
+    <div style="text-align:center">
+   <div class="article-list">
+        <div class="container">
+            <div class="intro"></div>
+            <div class="row articles">
+                <div class="col-sm-6 col-md-4 item"><a href="invoices"><img class="img-fluid" src="assets/img/invoice.svg" style="width: 200px;height: 200px;"></a>
+                    <h4 class="name"><br><a href="invoices" class="action" style="color:black">Rechnungen<br><br></h4>
+                </div>
+                <div class="col-sm-6 col-md-4 item"><a href="files"><img class="img-fluid" src="assets/img/documents.svg" style="width: 200px;height: 200px;"></a>
+                    <h4 class="name"><br><a href="files" class="action" style="color:black">Dokumente</a><br><br></h4>                    
+                </div>
+                <div class="col-sm-6 col-md-4 item"><a href="chat/5"><img class="img-fluid" src="assets/img/chat.svg" style="width: 200px;height: 200px;"></a>
+                    <h4 class="name"><br><a href="chat" class="action" style="color:black">Nachrichten Hauswart</a><br><br></h4>
+                </div>
+                <div class="col-sm-6 col-md-4 item"><a href="chat/4"><img class="img-fluid" src="assets/img/chat.svg" style="width: 200px;height: 200px;"></a>
+                    <h4 class="name"><br><a href="chat" class="action" style="color:black">Nachrichten Verwaltung</a><br><br></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="container" style="margin-bottom: 25px;">
         <div class="table-responsive" style="width: 75%;">
             <table class="table">
                 <thead>
@@ -32,28 +55,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
-    
-    <div style="text-align:center">
-   <div class="article-list">
-        <div class="container">
-            <div class="intro"></div>
-            <div class="row articles">
-                <div class="col-sm-6 col-md-4 item"><a href="invoices"><img class="img-fluid" src="assets/img/invoice.svg"></a>
-                    <h4 class="name"><br><a href="invoices" class="action" style="color:black">Rechnungen<br><br></h4>
-                </div>
-                <div class="col-sm-6 col-md-4 item"><a href="files"><img class="img-fluid" src="assets/img/documents.svg"></a>
-                    <h4 class="name"><br><a href="files" class="action" style="color:black">Dokumente</a><br><br></h4>                    
-                </div>
-                <div class="col-sm-6 col-md-4 item"><a href="chat/5"><img class="img-fluid" src="assets/img/chat.svg"></a>
-                    <h4 class="name"><br><a href="chat" class="action" style="color:black">Nachrichten Hauswart</a><br><br></h4>
-                </div>
-                <div class="col-sm-6 col-md-4 item"><a href="chat/4"><img class="img-fluid" src="assets/img/chat.svg"></a>
-                    <h4 class="name"><br><a href="chat" class="action" style="color:black">Nachrichten Verwaltung</a><br><br></h4>
-                </div>
-            </div>
-        </div>
-    </div>
     </div>
 
 

@@ -105,7 +105,8 @@
         </div>
     </div>
 
-    <div class="container"><a href="/myobject" class="btn btn-primary">Zurück</a></div>
+    <div class="container"><a href="/myobject" class="btn btn-primary">Zurück zu Verwalten...</a></div>
+    
     
 
     

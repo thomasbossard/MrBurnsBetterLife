@@ -35,7 +35,7 @@
                             <td>{{$formcontent->email}}</td>
                             <td>{{$formcontent->subject}}</td>
                             <td>{{$formcontent->text}}</td>
-                            <td><input type="checkbox" name="id[]" value="{{$formcontent->id}}"></td>
+                            <td><div class="checkbox"><input type="checkbox" name="id[]" value="{{$formcontent->id}}"></div></td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -43,10 +43,10 @@
             </div>
         </div>                
 
-            <div class="container"><button class="btn btn-primary" type="submit">Nachricht verarbeiten</button></div>                  
+            <div class="container" style="padding-bottom: 25px;"><button class="btn btn-primary" type="submit">Nachricht verarbeiten</button></div>                  
     </form>
 @endif
-
+    
 @if($allnewformcontents->isEmpty()) 
     <div class="container">
         Aktuell keine neuen Nachrichten...
@@ -55,7 +55,7 @@
  
 
 @if(!$allprocessedformcontents->isEmpty()) 
-    <div class="container" style="padding-top: 50px;">
+    <div class="container" style="padding-bottom: 25px;">
         <h3>Verarbeitete Nachrichten</h3>
     </div>
 
@@ -86,6 +86,9 @@
         </div>
     </div>
 @endif
+
+
+<div class="container"><a href="/manage" class="btn btn-primary">Zurück zu Verwalten...</a></div>
 
 </body>           
 @endsection
