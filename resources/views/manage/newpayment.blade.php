@@ -39,6 +39,12 @@
         </div>
     </div>
 
+    <div class="container">
+    <form action="/newpayment" id="newpayment" method="post" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <button class="btn btn-primary" type="submit">Neuen Zahlungseingang erfassen</button>
+    </form>
+    </div>
     
 @endif
 
