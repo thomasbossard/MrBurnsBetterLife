@@ -19,6 +19,7 @@
                 <thead>
                     <tr>
                         <th>Wohnung</th>
+                        <th>Betreff</th>
                         <th>Message</th>
                     </tr>
                 </thead>
@@ -32,6 +33,7 @@
                             </select>
                         </td>
                         <td><input class="form-control" type="text" name="message" form="newpayment"></td>
+                        <td><input class="form-control" type="text" name="message" form="newpayment"></td>
                     </tr>
                 </tbody>
             </table>
@@ -43,7 +45,7 @@
 </div>
 
 @if(!$pushmessages->isEmpty())         
-    <form action="/processnewmessage" method="post">
+    <form action="/storenewpushmessage" method="post">
                 {{ csrf_field() }}
                 
                 
@@ -52,20 +54,20 @@
                     <table class="table">
                         <thead>
                             <tr>
+                                <th>Wohnung</th>
                                 <th>Betreff</th>
                                 <th>Message</th>
                                 <th>Datum</th>
-                                <th>Wohung</th>
                                 <th>Auswählen</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($pushmessages as $pushmessage)
                             <tr>
+                                <td>{{$pushmessage->name}}</td>
                                 <td>{{$pushmessage->subject}}</td>
                                 <td>{{$pushmessage->text}}</td>
                                 <td>{{$pushmessage->date}}</td>
-                                <td>{{$pushmessage->name}}</td>
                                 <td><input type="checkbox" name="id[]" value="{{$pushmessage->id}}"></td>
                             </tr>
                             @endforeach
@@ -74,7 +76,7 @@
                 </div>
             </div>                
                                
-            <div class="container" style="margin-bottom: 25px;"><button class="btn btn-primary" type="submit">Rechnung verarbeiten</button></div>
+            <div class="container" style="margin-bottom: 25px;"><button class="btn btn-primary" type="submit">Pushmessages löschen</button></div>
 
     </form>
 @endif
@@ -83,7 +85,7 @@
 
 @if($pushmessages->isEmpty())    
     <div class="container" style="margin-bottom: 25px;">
-        Keine offenen Rechnungen.
+        Keine Pushmessages.
     </div>
 @endif
 

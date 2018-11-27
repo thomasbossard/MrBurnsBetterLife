@@ -45,25 +45,24 @@ class PushMessagesController extends Controller
         }     
     }
     
-    public function storenewinvoice(Request $request)
+    public function storenewpushmessage(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'fileupload' => 'required|file',
-            'amount' => 'required',
-            'description' => 'required'
+            'subject' => 'required|file',
+            'text' => 'required',
+            'rentableobject_id' => 'required'
         ]);
         if(!($validator->fails())){
             $path = $request->file('fileupload')->store('public');
 
-            $invoice = new Invoice;
-            $invoice->amount  = $request->amount;
-            $invoice->description  = $request->description;
-            $invoice->date      = date('Y-m-d H:i:s');
-            $invoice->user_id    = $request->user_id;
-            $invoice->type_id    = $request->type_id;
-            $invoice->filepath    = $path;
+            $pushmessage = new PushMessage;
+            $pushmessage->subject            = $request->subject;
+            $pushmessage->text               = $request->text;
+            $pushmessage->date               = date('Y-m-d H:i:s');
+            $pushmessage->rentableobject_id  = $request->rentableobject_id;
+            
 
-            $invoice->save();
+            $pushmessage->save();
             //
             return redirect()->back()->with('message', 'Neue Rechnung gespeichert!');
         } else {
