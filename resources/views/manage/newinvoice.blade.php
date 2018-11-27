@@ -83,7 +83,7 @@
 
 
 <div class="container" style="margin-bottom: 25px;">    
-    <input type="file" id="real-file" hidden="hidden">
+    <input type="file" id="real-file" hidden="hidden" form="newinvoice" name="fileupload">
     <button class="btn btn-primary" type="button" id="custom-button">Datei auswählen...</button>
     <span id="custom-text">Keine Datei ausgewählt.</span>
 </div>
