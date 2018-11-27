@@ -44,3 +44,5 @@ Route::post('/chat/getChat/{id}', 'ChatController@getChat')->middleware('auth');
 Route::post('/chat/sendChat', 'ChatController@sendChat')->middleware('auth');
 Route::get('/interface_allinvoices', 'InterfaceController@allinvoices');
 Route::get('/interface_openamounts', 'InterfaceController@openamounts');
+Route::get('/newpushmessage', 'PushMessagesController@newpushmessage');
+Route::post('/newpushmessage', 'PushMessagesController@storenewpushmessage');

@@ -8,10 +8,9 @@
 @endif 
 
 
-@if(!$users->isEmpty())
 
     <div class="container">
-        <h3>Neuen Zahlungseingang erfassen</h3>
+        <h3>Neue Pushmessage erfassen</h3>
     </div>
 
     <div class="container">
@@ -19,35 +18,32 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Mieter</th>
-                        <th>Betrag</th>
+                        <th>Wohnung</th>
+                        <th>Message</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>
                             <select class="browser-default custom-select" name="user_id" form="newpayment">
-                                @foreach ($users as $user)
-                                    <option value="{{$user->id}}">{{$user->name}} {{$user->givenname}}</option>
+                                @foreach ($rentableobject as $rentableobject)
+                                    <option value="{{$rentableobject->id}}">{{$rentableobject->name}}</option>
                                 @endforeach
                             </select>
                         </td>
-                        <td><input class="form-control" type="number" name="amount" form="newpayment"></td>
+                        <td><input class="form-control" type="text" name="message" form="newpayment"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    
-@endif
-
-<div class="container" style="padding-top: 50px;">
-    <h3>Unbezahlte Rechnungen</h3>
+    <div class="container" style="padding-top: 50px;">
+    <h3>Alle Pushmessages</h3>
 </div>
 
-@if(!$allunpaidinvoices->isEmpty())         
-    <form action="/processinvoice" method="post">
+@if(!$pushmessages->isEmpty())         
+    <form action="/processnewmessage" method="post">
                 {{ csrf_field() }}
                 
                 
@@ -56,19 +52,21 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Vorname</th>
-                                <th>Name</th>
-                                <th>Betrag</th>
+                                <th>Betreff</th>
+                                <th>Message</th>
+                                <th>Datum</th>
+                                <th>Wohung</th>
                                 <th>Auswählen</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($allunpaidinvoices as $invoice)
+                            @foreach ($pushmessages as $pushmessage)
                             <tr>
-                                <td>{{$invoice->name}}</td>
-                                <td>{{$invoice->givenname}}</td>
-                                <td>{{$invoice->amount}}</td>
-                                <td><input type="checkbox" name="id[]" value="{{$invoice->id}}"></td>
+                                <td>{{$pushmessage->subject}}</td>
+                                <td>{{$pushmessage->text}}</td>
+                                <td>{{$pushmessage->date}}</td>
+                                <td>{{$pushmessage->name}}</td>
+                                <td><input type="checkbox" name="id[]" value="{{$pushmessage->id}}"></td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -83,11 +81,12 @@
 
 
 
-@if($allunpaidinvoices->isEmpty())    
+@if($pushmessages->isEmpty())    
     <div class="container" style="margin-bottom: 25px;">
         Keine offenen Rechnungen.
     </div>
 @endif
+
 
 <div class="container"><a href="/manage" class="btn btn-primary">Zurück zu Verwalten...</a></div>
 

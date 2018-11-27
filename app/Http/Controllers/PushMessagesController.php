@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Invoice;
+use Illuminate\Support\Facades\DB;
+use Auth;
+use Storage;
+use Validator;
 
 class PushMessagesController extends Controller
 {
@@ -13,72 +18,63 @@ class PushMessagesController extends Controller
      */
     public function index()
     {
-        //
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    
+    public function newpushmessage()
     {
-        //
+        if (Auth::check()) {
+            $user = Auth::user();
+            
+            if ($user->usertype_id == 1){
+                
+                $rentableobject = DB::table('rentableobjects')
+                        ->get();
+                
+                $pushmessages = DB::table('pushmessages')
+                        ->join('rentableobjects', 'rentableobjects.id', '=', 'pushmessages.rentableobject_id')
+                        ->get();
+       
+                return view('manage.newpushmessage', compact('rentableobject', 'pushmessages'));
+                
+                
+            } else {
+                    return view('pages.error')->with('errormessage', 'Keine Berechtigung. Melden Sie sich bitte bei der Verwaltung.');
+                }
+        } else {
+            return view('pages.nologinerror');
+        }     
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    
+    public function storenewinvoice(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'fileupload' => 'required|file',
+            'amount' => 'required',
+            'description' => 'required'
+        ]);
+        if(!($validator->fails())){
+            $path = $request->file('fileupload')->store('public');
+
+            $invoice = new Invoice;
+            $invoice->amount  = $request->amount;
+            $invoice->description  = $request->description;
+            $invoice->date      = date('Y-m-d H:i:s');
+            $invoice->user_id    = $request->user_id;
+            $invoice->type_id    = $request->type_id;
+            $invoice->filepath    = $path;
+
+            $invoice->save();
+            //
+            return redirect()->back()->with('message', 'Neue Rechnung gespeichert!');
+        } else {
+            return redirect()->back()->with('message', 'Bitte alle Felder richtig ausfüllen!');
+        }
+        
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    
+    public function downloadinvoice($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $invoice = Invoice::find($id);
+        return Storage::download($invoice->filepath);
     }
 }
