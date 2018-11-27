@@ -52,6 +52,10 @@
                         <td>{{$groundkeeper->name}} {{$groundkeeper->givenname}}</td>
                         @endforeach
                     </tr>
+                    <tr>
+                        <td>offenene Heiz und Nebenkosten 2018:</td>
+                        <td>{{$openamount}}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
