@@ -53,14 +53,12 @@ class ObjectController extends Controller
                 foreach ($invoice as $inv){
                     $openamount += $inv->amount;
                 }
-
-                return view('myobject.index', compact('manager', 'groundkeeper', 'rentableobject', 'pushmessage', 'openamount'));
-
-            } else {
+                if ($rentableobject->isEmpty()){
                 return view('pages.error')->with('errormessage', 'Kein Haus zugewiesen. Melden Sie sich bitte bei der Verwaltung.');
-            }
-            } else {
+                } else {
+                  return view('myobject.index', compact('manager', 'groundkeeper', 'rentableobject', 'pushmessage', 'openamount'));
+         }     } }else {
                 return view('pages.nologinerror');
             }
-    }
-}   
+            
+}   }
