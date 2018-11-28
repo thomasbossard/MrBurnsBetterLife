@@ -49,7 +49,12 @@ class FilesController extends Controller
                         ->where('users.usertype_id', '=', 2)
                         ->get();
                 
-                return view('manage.newfile', compact('users'));
+                  $allfiles = DB::table('files')
+                        ->join('users', 'users.id', '=', 'files.user_id')
+                        ->select('files.*','users.name','users.givenname')
+                        ->get();
+                
+                return view('manage.newfile', compact('users', 'allfiles'));
                 
                 
             } else {
@@ -64,13 +69,13 @@ class FilesController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'fileupload' => 'required|file',
-            'name' => 'required',
+            'filename' => 'required',
         ]);
         if(!($validator->fails())){
             $path = $request->file('fileupload')->store('public');
 
             $file = new File;
-            $file->name  = $request->name;
+            $file->filename  = $request->filename;
             $file->user_id    = $request->user_id;
             $file->filepath    = $path;
 
@@ -88,4 +93,15 @@ class FilesController extends Controller
         $file = File::find($id);
         return Storage::download($file->filepath);
     }
+    
+     public function deletefile(Request $request){
+           if($request->filled('id')){
+            foreach ($request->id as $id){
+                $file = File::find($id);
+                $file->delete();
+                    return redirect()->back()->with('message', 'Datei gelöscht.');
+            }} else {
+            return redirect()->back();
+        
+     }}
 }

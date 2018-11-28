@@ -50,4 +50,4 @@ Route::post('/deletepushmessage', 'PushMessagesController@deletepushmessage');
 Route::get('/files', 'FilesController@index');
 Route::get('/newfile', 'FilesController@newfile');
 Route::post('/newfile', 'FilesController@storenewfile');
-Route::post('/deletefile', 'PushMessagesController@deletefile');
+Route::post('/deletefile', 'FilesController@deletefile');

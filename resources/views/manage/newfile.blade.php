@@ -57,7 +57,7 @@
                         </select>
                         </td>
                         <td>
-                            <input class="form-control" type="text" name="name" form="newfile">
+                            <input class="form-control" type="text" name="filename" form="newfile">
                         </td>
                     </tr>
                 </tbody>
@@ -81,6 +81,47 @@
             <button class="btn btn-primary" type="submit">Datei hochladen</button>
     </form>
 </div>
+
+
+<div class="container" style="padding-top: 50px;">
+    <h3>Alle Datein</h3>
+</div>
+
+       
+    <form action="/deletefile" method="post">
+                {{ csrf_field() }}
+                
+                
+            <div class="container">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Vorname</th>
+                                <th>Name</th>
+                                <th>Datei</th>
+                                <th>Auswählen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($allfiles as $allfiles)
+                            <tr>
+                                <td>{{$allfiles->name}}</td>
+                                <td>{{$allfiles->givenname}}</td>
+                                  <td><a href="/downloadinvoice/{{$allfiles->id}}">{{$allfiles->filename}}</a></td>
+                                <td><input type="checkbox" name="id[]" value="{{$allfiles->id}}"></td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>                
+                               
+            <div class="container" style="margin-bottom: 25px;"><button class="btn btn-primary" type="submit">Datei löschen</button></div>
+
+    </form>
+
+
 
 <div class="container"><a href="/manage" class="btn btn-primary">Zurück zu Verwalten...</a></div>
 
