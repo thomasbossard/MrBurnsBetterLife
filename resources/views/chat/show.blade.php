@@ -2,9 +2,7 @@
 
 @section('content')
 
-    <audio id="ChatAudio">
-        <source src="{{ asset('sounds/chat.mp3') }}">
-    </audio>
+    
     <meta name="friendId" content="{{ $friend->id }}">
     <div class="container">
         <div class="column is-8 is-offset-2">

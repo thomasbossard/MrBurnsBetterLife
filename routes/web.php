@@ -47,3 +47,7 @@ Route::get('/interface_openamounts', 'InterfaceController@openamounts');
 Route::get('/newpushmessage', 'PushMessagesController@newpushmessage');
 Route::post('/newpushmessage', 'PushMessagesController@storenewpushmessage');
 Route::post('/deletepushmessage', 'PushMessagesController@deletepushmessage');
+Route::get('/files', 'FilesController@index');
+Route::get('/newfile', 'FilesController@newfile');
+Route::post('/newfile', 'FilesController@storenewfile');
+Route::post('/deletefile', 'PushMessagesController@deletefile');

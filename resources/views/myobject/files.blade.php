@@ -14,14 +14,18 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Beschreibung</th>
+                        <th>Datei</th>
                     </tr>
                 </thead>
                 <tbody>
+                    
+                    @foreach ($file as $file)
                     <tr>
-                        <td>Cell 1</td>
-                        <td><a href="#">Link</a></td>
+                        <td>{{$file->name}}</td>
+                    
+                        <td><a href="/downloadinvoice/{{$file->id}}">Herunterladen</a></td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

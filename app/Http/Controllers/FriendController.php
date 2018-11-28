@@ -29,16 +29,20 @@ class FriendController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         // validate
         // add to database
         $friend = new Friend;
         $friend->user_id = Auth::user()->id;
-        $friend->friend_id = $request->friend_id;
+        $friend->friend_id = 4;
         $friend->save();
+        
+        $friend2 = new Friend;
+        $friend2->user_id = Auth::user()->id;
+        $friend2->friend_id = 5;
+        $friend2->save();
         // success message and return
-        Session::flash('success', 'Friend has been added');
         return redirect()->back();
     }
     /**
