@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Invoice;
+use App\Pushmessage;
 use Illuminate\Support\Facades\DB;
 use Auth;
 use Storage;
@@ -32,8 +32,9 @@ class PushMessagesController extends Controller
                 
                 $pushmessages = DB::table('pushmessages')
                         ->join('rentableobjects', 'rentableobjects.id', '=', 'pushmessages.rentableobject_id')
+                        ->select('pushmessages.subject', 'rentableobjects.name','pushmessages.text', 'pushmessages.date','pushmessages.id')
                         ->get();
-       
+    
                 return view('manage.newpushmessage', compact('rentableobject', 'pushmessages'));
                 
                 
@@ -48,12 +49,11 @@ class PushMessagesController extends Controller
     public function storenewpushmessage(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'subject' => 'required|file',
+            'subject' => 'required',
             'text' => 'required',
-            'rentableobject_id' => 'required'
         ]);
         if(!($validator->fails())){
-            $path = $request->file('fileupload')->store('public');
+            
 
             $pushmessage = new PushMessage;
             $pushmessage->subject            = $request->subject;
@@ -71,9 +71,19 @@ class PushMessagesController extends Controller
         
     }
     
-    public function downloadinvoice($id)
+    public function deletepushmessage(Request $request)
     {
-        $invoice = Invoice::find($id);
-        return Storage::download($invoice->filepath);
-    }
+        if($request->filled('id')){
+            foreach ($request->id as $id){
+                $pushmessage = PushMessage::find($id);
+                $pushmessage->delete();
+                
+            }    
+               
+            
+        return redirect()->back()->with('message', 'Gelöscht');
+    } else {
+            return redirect()->back();
+        }
+        }
 }

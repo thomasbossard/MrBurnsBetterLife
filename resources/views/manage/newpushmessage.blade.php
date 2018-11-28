@@ -26,26 +26,35 @@
                 <tbody>
                     <tr>
                         <td>
-                            <select class="browser-default custom-select" name="user_id" form="newpayment">
+                            <select class="browser-default custom-select" name="rentableobject_id" form="newpushmessage">
                                 @foreach ($rentableobject as $rentableobject)
                                     <option value="{{$rentableobject->id}}">{{$rentableobject->name}}</option>
                                 @endforeach
+                               
+            
                             </select>
                         </td>
-                        <td><input class="form-control" type="text" name="message" form="newpayment"></td>
-                        <td><input class="form-control" type="text" name="message" form="newpayment"></td>
+                        <td><input class="form-control" type="text" name="subject" form="newpushmessage"></td>
+                        <td><input class="form-control" type="text" name="text" form="newpushmessage"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+  <div class="container">
+    <form action="/newpushmessage" id="newpushmessage" method="post" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <button class="btn btn-primary" type="submit">Neuen Pushmessage erfassen</button>
+    </form>
+    </div>
+
 
     <div class="container" style="padding-top: 50px;">
     <h3>Alle Pushmessages</h3>
 </div>
 
 @if(!$pushmessages->isEmpty())         
-    <form action="/storenewpushmessage" method="post">
+    <form action="/deletepushmessage" method="post">
                 {{ csrf_field() }}
                 
                 
@@ -59,16 +68,20 @@
                                 <th>Message</th>
                                 <th>Datum</th>
                                 <th>Auswählen</th>
+                                <th>ID</th>
                             </tr>
                         </thead>
+                
                         <tbody>
                             @foreach ($pushmessages as $pushmessage)
                             <tr>
                                 <td>{{$pushmessage->name}}</td>
                                 <td>{{$pushmessage->subject}}</td>
                                 <td>{{$pushmessage->text}}</td>
+                                  <td>{{$pushmessage->id}}</td>
                                 <td>{{$pushmessage->date}}</td>
-                                <td><input type="checkbox" name="id[]" value="{{$pushmessage->id}}"></td>
+                               
+                            <td><div class="checkbox"><input type="checkbox" name="id[]" value="{{$pushmessage->id}}"></div> </td>
                             </tr>
                             @endforeach
                         </tbody>

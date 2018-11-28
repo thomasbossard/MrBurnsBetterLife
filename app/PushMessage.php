@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class PushMessage extends Model
 {
-    //
+    protected $table ='pushmessages';
 }
