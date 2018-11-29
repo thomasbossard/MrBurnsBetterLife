@@ -64,7 +64,7 @@ class PushMessagesController extends Controller
 
             $pushmessage->save();
             //
-            return redirect()->back()->with('message', 'Neue Rechnung gespeichert!');
+            return redirect()->back()->with('message', 'Neue Pushmessage gespeichert!');
         } else {
             return redirect()->back()->with('message', 'Bitte alle Felder richtig ausfüllen!');
         }

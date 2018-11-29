@@ -43,6 +43,11 @@
                     <tr>                        
                         <td>Adresse:</td>
                         <td>{{$rentableobject->street}} {{$rentableobject->housenumber}}, {{$rentableobject->zipcode}} {{$rentableobject->city}}</td>
+                        
+                    </tr>
+                        <tr>                        
+                        <td>Mietkosten:</td>
+                        <td>{{$rentableobject->costpermonth}} Franken pro Monat </td>
                         @endforeach
                     </tr>
                     <tr>
