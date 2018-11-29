@@ -22,8 +22,8 @@
     }
     .chat-right {
         float: right;
-         border-color: lightblue;
-         background-color: lightblue;
+         border-color: red;
+         background-color: red;
     }
     .chat-left {
         float: left;

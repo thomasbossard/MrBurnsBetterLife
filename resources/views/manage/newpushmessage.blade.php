@@ -7,7 +7,7 @@
 	</div>
 @endif 
 
-
+ 
 
     <div class="container">
         <h3>Neue Pushmessage erfassen</h3>
@@ -18,9 +18,8 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Wohnung</th>
-                        <th>Betreff</th>
-                        <th>Message</th>
+                        <th style="width: 30%">Wohnung</th>
+                        <th style="width: 70%">Betreff</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,8 +34,13 @@
                             </select>
                         </td>
                         <td><input class="form-control" type="text" name="subject" form="newpushmessage"></td>
-                        <td><input class="form-control" type="text" name="text" form="newpushmessage"></td>
+
+                    <tr>                        
+                        <td colspan="2"><textarea class="form-control" type="text" name="text" form="newpushmessage" rows="4">Pushachricht eingeben...</textarea></td>
                     </tr>
+                        
+                        
+                    </tr>                  
                 </tbody>
             </table>
         </div>
@@ -67,8 +71,7 @@
                                 <th>Betreff</th>
                                 <th>Message</th>
                                 <th>Datum</th>
-                                <th>Auswählen</th>
-                                <th>ID</th>
+                                <th>Auswählen</th>                                
                             </tr>
                         </thead>
                 
@@ -77,11 +80,9 @@
                             <tr>
                                 <td>{{$pushmessage->name}}</td>
                                 <td>{{$pushmessage->subject}}</td>
-                                <td>{{$pushmessage->text}}</td>
-                                  <td>{{$pushmessage->id}}</td>
+                                <td>{{$pushmessage->text}}</td>                                
                                 <td>{{$pushmessage->date}}</td>
-                               
-                            <td><div class="checkbox"><input type="checkbox" name="id[]" value="{{$pushmessage->id}}"></div> </td>
+                                <td><div class="checkbox"><input type="checkbox" name="id[]" value="{{$pushmessage->id}}"></div></td>
                             </tr>
                             @endforeach
                         </tbody>

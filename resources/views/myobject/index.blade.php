@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
           
-    <div style="text-align:center">
+   <div style="text-align:center">
    <div class="article-list">
-        <div class="container">
+        <div class="container" style="padding-bottom: 25px;">
             <div class="intro"></div>
             <div class="row articles">
                 <div class="col-sm-6 col-md-4 item"><a href="invoices"><img class="img-fluid" src="assets/img/invoice.svg" style="width: 200px;height: 200px;"></a>
@@ -24,18 +24,23 @@
     </div>
 
 
+    <div class="container" style="padding-bottom: 10px;">
+        <h4>Mein Objekt</h4>
+    </div>
+    
     <div class="container" style="margin-bottom: 25px;">
-        <div class="table-responsive" style="width: 75%;">
+        <div class="table-responsive">
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Mein Objekt</th>
+                        @foreach ($rentableobject as $rentableobject)
+                        <th>{{$rentableobject->name}}</th>
                         <th></th>
+                        
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        @foreach ($rentableobject as $rentableobject)
+                    <tr>                        
                         <td>Adresse:</td>
                         <td>{{$rentableobject->street}} {{$rentableobject->housenumber}}, {{$rentableobject->zipcode}} {{$rentableobject->city}}</td>
                         @endforeach
@@ -53,7 +58,7 @@
                         @endforeach
                     </tr>
                     <tr>
-                        <td>offenene Heiz und Nebenkosten 2018:</td>
+                        <td>Offenene Heiz und Nebenkosten 2018:</td>
                         <td>{{$openamount}}</td>
                     </tr>
                 </tbody>
@@ -62,20 +67,26 @@
     </div>
 
 
+    <div class="container" style="padding-bottom: 10px;">
+        <h4>Push Nachrichten</h4>
+    </div>
+
     <div class="container">
         <div class="table-responsive">
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Push Nachrichten</th>
-                        <th></th>
+                        <th>Betreff</th>
+                        <th>Nachricht</th>
+                        <th>Datum</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($pushmessage as $pushmessage)
-                    <tr>
-                        <td>{{$pushmessage->date}}</td>
+                    <tr>                        
+                        <td>{{$pushmessage->subject}}</td>
                         <td>{{$pushmessage->text}}</td>
+                        <td>{{$pushmessage->date}}</td>
                     </tr>
                     @endforeach
                 </tbody>

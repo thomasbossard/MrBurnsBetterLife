@@ -35,7 +35,7 @@
 @if(!$users->isEmpty())
 
     <div class="container">
-        <h3>Neuen Rechnung erfassen</h3>
+        <h3>Neues Dokument hinzufügen</h3>
     </div>
     
     <div class="container">
@@ -84,7 +84,7 @@
 
 
 <div class="container" style="padding-top: 50px;">
-    <h3>Alle Datein</h3>
+    <h3>Alle Dokumente</h3>
 </div>
 
        
@@ -92,7 +92,7 @@
                 {{ csrf_field() }}
                 
                 
-            <div class="container">
+            <div class="container" style="margin-bottom: 25px;">
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -114,8 +114,8 @@
                             @endforeach
                         </tbody>
                     </table>
-                </div>
-            </div>                
+                </div>      
+            </div>
                                
             <div class="container" style="margin-bottom: 25px;"><button class="btn btn-primary" type="submit">Datei löschen</button></div>
 
