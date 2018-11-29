@@ -34,7 +34,6 @@ const app = new Vue({
 
             Echo.private('Chat.' + friendId + '.' + userId)
                 .listen('BroadcastChat', (e) => {
-                    document.getElementById('ChatAudio').play();
                     this.chats.push(e.chat);
                 });
         }
