@@ -57500,7 +57500,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n.panel-block[data-v-0d66c37a] {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    border: none;\n}\n.chat[data-v-0d66c37a] {\n    width: 100%;\n    padding: 20px;\n    -webkit-box-shadow: inset 0 0 5px 0 grey;\n            box-shadow: inset 0 0 5px 0 grey;\n    margin-bottom: 20px;\n    border: 1px solid grey;\n    max-height: 600px;\n    overflow-x: auto;\n}\n.chat-right[data-v-0d66c37a], .chat .chat-left[data-v-0d66c37a] {\nborder: 2px solid #dedede;\nbackground-color: lightgreen;\nborder-color: lightgreen;\nborder-radius: 5px;\npadding: 10px;\nmargin: 10px 0;\n}\n.chat-right[data-v-0d66c37a] {\n    float: right;\n     border-color: red;\n     background-color: red;\n}\n.chat-left[data-v-0d66c37a] {\n    float: left;\n    background-color: blue;\n}\n.no-message[data-v-0d66c37a] {\n    height: 200px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n", ""]);
+exports.push([module.i, "\n.panel-block[data-v-0d66c37a] {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    border: none;\n}\n.chat[data-v-0d66c37a] {\n    width: 100%;\n    padding: 20px;\n    -webkit-box-shadow: inset 0 0 5px 0 grey;\n            box-shadow: inset 0 0 5px 0 grey;\n    margin-bottom: 20px;\n    border: 1px solid grey;\n    max-height: 600px;\n    overflow-x: auto;\n}\n.chat-right[data-v-0d66c37a], .chat .chat-left[data-v-0d66c37a] {\nborder: 2px solid #dedede;\nbackground-color: lightgreen;\nborder-color: lightgreen;\nborder-radius: 5px;\npadding: 10px;\nmargin: 10px 0;\n}\n.chat-right[data-v-0d66c37a] {\n    float: right;\n     border-color: lightblue;\n     background-color: lightblue;\n}\n.chat-left[data-v-0d66c37a] {\n    float: left;\n    background-color: blue;\n}\n.no-message[data-v-0d66c37a] {\n    height: 200px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n", ""]);
 
 // exports
 
@@ -57601,6 +57601,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['chats', 'userid', 'friendid']
@@ -57643,7 +57644,7 @@ var render = function() {
             })
           )
         : _c("div", { staticClass: "no-message" }, [
-            _vm._v("\n        There are no messages\n    ")
+            _vm._v("\n        Der Chat ist leer...\n    ")
           ]),
       _vm._v(" "),
       _c("chat-composer", {
@@ -57808,46 +57809,57 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "panel-block field" }, [
-    _c("div", { staticClass: "abc" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.chat,
-            expression: "chat"
-          }
-        ],
-        staticClass: "input",
-        attrs: { type: "text" },
-        domProps: { value: _vm.chat },
-        on: {
-          keyup: function($event) {
-            if (
-              !("button" in $event) &&
-              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-            ) {
-              return null
+    _c(
+      "div",
+      { staticClass: "abc", staticStyle: { "margin-bottom": "10px" } },
+      [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.chat,
+              expression: "chat"
             }
-            return _vm.sendChat($event)
-          },
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+          ],
+          staticClass: "test",
+          attrs: { type: "text" },
+          domProps: { value: _vm.chat },
+          on: {
+            keyup: function($event) {
+              if (
+                !("button" in $event) &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.sendChat($event)
+            },
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.chat = $event.target.value
             }
-            _vm.chat = $event.target.value
           }
-        }
-      })
-    ]),
+        })
+      ]
+    ),
     _vm._v(" "),
-    _c("div", { staticClass: "control auto-width" }, [
-      _c("input", {
-        staticClass: "button",
-        attrs: { type: "button", value: "Send" },
-        on: { click: _vm.sendChat }
-      })
-    ])
+    _c(
+      "div",
+      {
+        staticClass: "control auto-width",
+        staticStyle: { "margin-bottom": "10px" }
+      },
+      [
+        _c("input", {
+          staticClass: "btn btn-primary",
+          attrs: { type: "button", value: "Senden" },
+          on: { click: _vm.sendChat }
+        })
+      ]
+    )
   ])
 }
 var staticRenderFns = []

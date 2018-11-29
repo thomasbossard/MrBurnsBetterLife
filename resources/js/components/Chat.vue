@@ -12,6 +12,7 @@
         max-height: 600px;
         overflow-x: auto;
     }
+
     .chat-right, .chat .chat-left {
     border: 2px solid #dedede;
     background-color: lightgreen;
@@ -22,8 +23,8 @@
     }
     .chat-right {
         float: right;
-         border-color: red;
-         background-color: red;
+         border-color: lightblue;
+         background-color: lightblue;
     }
     .chat-left {
         float: left;
@@ -49,7 +50,7 @@
             </div>
         </div>
         <div v-else class="no-message">
-            There are no messages
+            Der Chat ist leer...
         </div>
         <chat-composer v-bind:userid="userid" v-bind:chats="chats" v-bind:friendid="friendid"></chat-composer>
     </div>

@@ -1,10 +1,10 @@
 <template lang="html">
     <div class="panel-block field">
-        <div class="abc">
-            <input type="text" class="input" v-on:keyup.enter="sendChat" v-model="chat">
+        <div class="abc" style="margin-bottom: 10px;">
+            <input type="text" class="test" v-on:keyup.enter="sendChat" v-model="chat">
         </div>
-        <div class="control auto-width">
-            <input type="button" class="button" value="Send" v-on:click="sendChat">
+        <div class="control auto-width"  style="margin-bottom: 10px;">
+            <input type="button" class="btn btn-primary" value="Senden" v-on:click="sendChat">
         </div>
     </div>
 </template>
