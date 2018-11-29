@@ -14344,7 +14344,6 @@ var app = new Vue({
             });
 
             Echo.private('Chat.' + friendId + '.' + userId).listen('BroadcastChat', function (e) {
-                document.getElementById('ChatAudio').play();
                 _this.chats.push(e.chat);
             });
         }
