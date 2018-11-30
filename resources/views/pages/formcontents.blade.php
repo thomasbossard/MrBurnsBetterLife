@@ -1,13 +1,14 @@
 @extends('layouts.app')
 @section('content')
-<div class="contact-clean">
-    
-    
+        
         @if(session('message'))
 	<div class='alert alert-success'>
 		{{ session('message') }}
 	</div>
-	@endif  
+	@endif 
+        
+<div class="contact-clean">
+ 
         <form method="post">
             {{ csrf_field() }}
             <h2 class="text-center">Kontaktieren Sie uns!</h2>
