@@ -72,8 +72,9 @@ class FilesController extends Controller
             'filename' => 'required',
         ]);
         if(!($validator->fails())){
-            $path = $request->file('fileupload')->store('public');
-
+            $filename = $request->file('fileupload')->getClientOriginalName();
+            $path = $request->file('fileupload')->storeAs('public', $filename);
+            
             $file = new File;
             $file->filename  = $request->filename;
             $file->user_id    = $request->user_id;
