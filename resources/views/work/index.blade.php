@@ -3,7 +3,7 @@
 
     <div class="container">
         <h3>Übersicht</h3>
-        <hr class="style13">
+        <hr class="style13">        
     </div>
 
     <div style="text-align:center">
