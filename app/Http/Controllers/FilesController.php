@@ -98,9 +98,9 @@ class FilesController extends Controller
            if($request->filled('id')){
             foreach ($request->id as $id){
                 $file = File::find($id);
-                $file->delete();
+            $file->delete();}
                     return redirect()->back()->with('message', 'Datei gelöscht.');
-            }} else {
+            }else {
             return redirect()->back();
         
      }}

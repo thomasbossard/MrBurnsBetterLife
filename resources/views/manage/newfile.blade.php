@@ -108,7 +108,7 @@
                             <tr>
                                 <td>{{$allfiles->name}}</td>
                                 <td>{{$allfiles->givenname}}</td>
-                                  <td><a href="/downloadinvoice/{{$allfiles->id}}">{{$allfiles->filename}}</a></td>
+                                  <td><a href="/downloadfile/{{$allfiles->id}}">{{$allfiles->filename}}</a></td>
                                 <td><input type="checkbox" name="id[]" value="{{$allfiles->id}}"></td>
                             </tr>
                             @endforeach
