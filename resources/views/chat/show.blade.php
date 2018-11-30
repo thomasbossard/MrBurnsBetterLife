@@ -24,7 +24,7 @@
                         <div class="container" style="padding-top:10px"><a href="{{ url('/myobject') }}" class="btn btn-primary">Zurück zu Objekt...</a></div>
                         
                     <?php else: ?>  
-                        <div class="container" style="padding-top:10px"><a href="{{ url('/chat') }}" class="btn btn-primary">Zurück zu Objekt...</a></div>
+                        <div class="container" style="padding-top:10px"><a href="{{ url('/chat') }}" class="btn btn-primary">Zurück zu Chatübersicht...</a></div>
                     <?php endif; ?>
     
 @endsection
