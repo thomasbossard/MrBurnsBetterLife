@@ -18,7 +18,7 @@
                 <div class="col-sm-6 col-md-4 item"><div class="box"><a href="newinvoice"><img class="img-fluid" src="assets/img/invoice.svg" style="width: 100px;height: 100px;"></a>
                     <h5 class="name"><a href="newinvoice" class="action" style="color:black">Neue Rechnung erfassen</a><br><br></h5></div></div>
                 <div class="col-sm-6 col-md-4 item"><div class="box"><a href="newpayment"><img class="img-fluid" src="assets/img/receiving.svg" style="width: 100px;height: 100px;"></a>
-                    <h5 class="name"><a href="newpayment" class="action" style="color:black">Neuen Zahlungseingang erfassen</a><br><br></h5></div></div>
+                    <h5 class="name"><a href="newpayment" class="action" style="color:black">Neuer Zahlungseingang erfassen</a></h5></div></div>
                 <div class="col-sm-6 col-md-4 item"><div class="box"><a href="newfile"><img class="img-fluid" src="assets/img/documents.svg" style="width: 100px;height: 100px;"></a>
                     <h5 class="name"><a href="newfile" class="action" style="color:black">Neues Dokument hinzufügen</a><br><br></h5></div></div>
                 <div class="col-sm-6 col-md-4 item"><div class="box"><a href="newpushmessage"><img class="img-fluid" src="assets/img/send.svg" style="width: 100px;height: 100px;"></a>
