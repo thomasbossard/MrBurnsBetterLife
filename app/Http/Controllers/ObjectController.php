@@ -50,13 +50,16 @@ class ObjectController extends Controller
                         ->select('invoices.*', 'invoicetypes.type')
                         ->get();
                 $openamount = 0;
+                
+                $user = \App\User::find($id);
+                
                 foreach ($invoice as $inv){
                     $openamount += $inv->amount;
                 }
                 if ($rentableobject->isEmpty()){
                 return view('pages.error')->with('errormessage', 'Leider wurde Ihnen noch kein Objekt zugewiesen. Melden Sie sich bitte bei der Verwaltung.');
                 } else {
-                  return view('myobject.index', compact('manager', 'groundkeeper', 'rentableobject', 'pushmessage', 'openamount'));
+                  return view('myobject.index', compact('manager', 'groundkeeper', 'rentableobject', 'pushmessage', 'openamount', 'user'));
          }     } }else {
                 return view('pages.nologinerror');
             }
