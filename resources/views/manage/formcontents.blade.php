@@ -8,6 +8,7 @@
 <body>
     <div class="container">
         <h3>Nachrichten von Kontaktformular</h3>
+        <hr class="style13">
     </div>
 
 @if(!$allnewformcontents->isEmpty())         
@@ -43,7 +44,7 @@
             </div>
         </div>                
 
-            <div class="container" style="padding-bottom: 25px;"><button class="btn btn-primary" type="submit">Nachricht verarbeiten</button></div>                  
+            <div class="container" style="padding-bottom: 50px;"><button class="btn btn-primary" type="submit">Nachricht verarbeiten</button></div>                  
     </form>
 @endif
     
@@ -55,8 +56,10 @@
  
 
 @if(!$allprocessedformcontents->isEmpty()) 
-    <div class="container" style="padding-bottom: 25px;">
+    
+    <div class="container">
         <h3>Verarbeitete Nachrichten</h3>
+        <hr class="style13">
     </div>
 
     <div class="container">

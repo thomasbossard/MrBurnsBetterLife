@@ -1,31 +1,9 @@
 @extends('layouts.app')
 @section('content')
           
-   <div style="text-align:center">
-   <div class="article-list">
-        <div class="container" style="padding-bottom: 25px;">
-            <div class="intro"></div>
-            <div class="row articles">
-                <div class="col-sm-6 col-md-4 item"><a href="invoices"><img class="img-fluid" src="assets/img/invoice.svg" style="width: 200px;height: 200px;"></a>
-                    <h4 class="name"><br><a href="invoices" class="action" style="color:black">Rechnungen<br><br></h4>
-                </div>
-                <div class="col-sm-6 col-md-4 item"><a href="files"><img class="img-fluid" src="assets/img/documents.svg" style="width: 200px;height: 200px;"></a>
-                    <h4 class="name"><br><a href="files" class="action" style="color:black">Dokumente</a><br><br></h4>                    
-                </div>
-                <div class="col-sm-6 col-md-4 item"><a href="chat/5"><img class="img-fluid" src="assets/img/chat.svg" style="width: 200px;height: 200px;"></a>
-                    <h4 class="name"><br><a href="chat" class="action" style="color:black">Chat Nachrichten Hauswart</a><br><br></h4>
-                </div>
-                <div class="col-sm-6 col-md-4 item"><a href="chat/4"><img class="img-fluid" src="assets/img/chat.svg" style="width: 200px;height: 200px;"></a>
-                    <h4 class="name"><br><a href="chat" class="action" style="color:black">Chat Nachrichten Verwaltung</a><br><br></h4>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
-
-    <div class="container" style="padding-bottom: 10px;">
-        <h4>Mein Objekt</h4>
+    <div class="container">
+        <h3>Mein Objekt</h3>
+        <hr class="style13">
     </div>
     
     <div class="container" style="margin-bottom: 25px;">
@@ -64,16 +42,43 @@
                     </tr>
                     <tr>
                         <td>Offenene Heiz und Nebenkosten 2018:</td>
-                        <td>{{$openamount}}</td>
+                        <td>{{$user->currentadditionalcosts}}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
+    <div class="container">
+        <h3>Übersicht</h3>
+        <hr class="style13">
+    </div>
+
+    <div style="text-align:center">
+   <div class="article-list">
+        <div class="container" style="padding-bottom: 25px;">
+            <div class="intro"></div>
+            <div class="row articles">
+                <div class="col-sm-6 col-md-4 item"><a href="invoices"><img class="img-fluid" src="assets/img/invoice.svg" style="width: 100px;height: 100px;"></a>
+                    <h5 class="name"><br><a href="invoices" class="action" style="color:black">Rechnungen<br><br></h5>
+                </div>
+                <div class="col-sm-6 col-md-4 item"><a href="files"><img class="img-fluid" src="assets/img/documents.svg" style="width: 100px;height: 100px;"></a>
+                    <h5 class="name"><br><a href="files" class="action" style="color:black">Dokumente</a><br><br></h5>                    
+                </div>
+                <div class="col-sm-6 col-md-4 item"><a href="chat/5"><img class="img-fluid" src="assets/img/chat.svg" style="width: 100px;height: 100px;"></a>
+                    <h5 class="name"><br><a href="chat" class="action" style="color:black">Chat Nachrichten Hauswart</a><br><br></h5>
+                </div>
+                <div class="col-sm-6 col-md-4 item"><a href="chat/4"><img class="img-fluid" src="assets/img/chat.svg" style="width: 100px;height: 100px;"></a>
+                    <h5 class="name"><br><a href="chat" class="action" style="color:black">Chat Nachrichten Verwaltung</a><br><br></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>  
 
     <div class="container" style="padding-bottom: 10px;">
-        <h4>Push Nachrichten</h4>
+        <h3>Push Nachrichten</h3>
+        <hr class="style13">
     </div>
 
     <div class="container">

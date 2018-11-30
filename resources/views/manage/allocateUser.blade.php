@@ -11,7 +11,8 @@
 @if(!$users_and_objects->isEmpty())
 
         <div class="container">
-        <h3>Bestehende Zuweisungen</h3>
+            <h3>Bestehende Zuweisungen</h3>
+            <hr class="style13">
         </div>
 
         <form action="/removeallocation" method="post">
@@ -47,7 +48,7 @@
             </div>
             </div>
             
-            <div class="container">
+            <div class="container" style="padding-bottom: 50px;">
                 <button class="btn btn-primary" type="submit">Zuweisung aufheben</button>
             </div>
 
@@ -57,8 +58,10 @@
 
 @if(!$unallocatedusers->isEmpty())
     
-    <div class="container" style="padding-top: 50px;">
-        <h3>Neue Zuweisung vornehmen</h3>
+
+    <div class="container">
+            <h3>Neue Zuweisung vornehmen</h3>
+            <hr class="style13">
     </div>
 
 

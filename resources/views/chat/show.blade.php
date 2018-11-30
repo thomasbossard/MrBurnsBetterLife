@@ -3,12 +3,13 @@
 @section('content')
 
     
-    <meta name="friendId" content="{{ $friend->id }}">
-    
-    <div class="container" style="padding-bottom:10px">
+    <meta name="friendId" content="{{ $friend->id }}">    
+      
+    <div class="container">
         <h3>Chat mit {{ $friend->name }} {{ $friend->givenname }}</h3>
+        <hr class="style13">
     </div>
-    
+        
     <div class="container">
         <div class="column is-8 is-offset-2">
             <div class="panel">

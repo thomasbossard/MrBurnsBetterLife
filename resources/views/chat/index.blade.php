@@ -2,20 +2,27 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <div class="container">
+        <h3>Chat Nachrichten</h3>
+        <hr class="style13">
+    </div>
     
-    @forelse ($friends as $friend)
+    
     <div style="text-align:center">
     <div class="article-list">
         <div class="container">
             <div class="intro"></div>
-            <div class="row articles">            
-                <div class="col-sm-6 col-md-4 item"><a href="{{ route('chat.show', $friend->id) }}"><img class="img-fluid" src="assets/img/chat.svg" style="width: 200px;height: 200px;"></a>
-                    <h4 class="name"><br><a href="{{ route('chat.show', $friend->id) }}" class="action" style="color:black">Chat mit {{ $friend->name }} {{ $friend->givenname }}</a><br><br></h4></div>           
+            <div class="row articles">
+                @forelse ($friends as $friend)
+                <div class="col-sm-6 col-md-4 item"><a href="{{ route('chat.show', $friend->id) }}"><img class="img-fluid" src="assets/img/chat.svg" style="width: 100px;height: 100px;"></a>
+                <h5 class="name"><br><a href="{{ route('chat.show', $friend->id) }}" class="action" style="color:black">Chat mit {{ $friend->name }} {{ $friend->givenname }}</a><br><br></h5></div>           
+                @empty
             </div>
         </div>
     </div>
     </div>
-    @empty
+    
     
     
     <section>        

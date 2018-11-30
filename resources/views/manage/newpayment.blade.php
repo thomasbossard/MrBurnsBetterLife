@@ -11,7 +11,8 @@
 @if(!$users->isEmpty())
 
     <div class="container">
-        <h3>Neuen Zahlungseingang erfassen</h3>
+            <h3>Neuen Zahlungseingang erfassen</h3>
+            <hr class="style13">
     </div>
 
     <div class="container">
@@ -45,12 +46,13 @@
         <button class="btn btn-primary" type="submit">Neuen Zahlungseingang erfassen</button>
     </form>
     </div>
-    
+     
 @endif
 
-<div class="container" style="padding-top: 50px;">
-    <h3>Unbezahlte Rechnungen</h3>
-</div>
+    <div class="container" style="padding-top: 50px;">
+            <h3>Unbezahlte Rechnungen</h3>
+            <hr class="style13">
+    </div>
 
 @if(!$allunpaidinvoices->isEmpty())         
     <form action="/processinvoice" method="post">

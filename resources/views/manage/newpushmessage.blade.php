@@ -7,10 +7,9 @@
 	</div>
 @endif 
 
- 
-
     <div class="container">
-        <h3>Neue Pushmessage erfassen</h3>
+                <h3>Neue Pushmessage erfassen</h3>
+                <hr class="style13">
     </div>
 
     <div class="container">
@@ -33,10 +32,10 @@
             
                             </select>
                         </td>
-                        <td><input class="form-control" type="text" name="subject" form="newpushmessage"></td>
+                        <td><input class="form-control" type="text" name="subject" form="newpushmessage" placeholder="Betreff"></td>
 
                     <tr>                        
-                        <td colspan="2"><textarea class="form-control" type="text" name="text" form="newpushmessage" rows="4">Pushachricht eingeben...</textarea></td>
+                        <td colspan="2"><textarea class="form-control" type="text" name="text" form="newpushmessage" rows="4" placeholder="Pushachricht eingeben..."></textarea></td>
                     </tr>
                         
                         
@@ -45,17 +44,18 @@
             </table>
         </div>
     </div>
-  <div class="container">
-    <form action="/newpushmessage" id="newpushmessage" method="post" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        <button class="btn btn-primary" type="submit">Neue Pushmessage erfassen</button>
-    </form>
+
+    <div class="container" style="padding-bottom: 50px;">
+        <form action="/newpushmessage" id="newpushmessage" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            <button class="btn btn-primary" type="submit">Neue Pushmessage erfassen</button>
+        </form>
     </div>
 
-
-    <div class="container" style="padding-top: 50px;">
-    <h3>Alle Pushmessages</h3>
-</div>
+    <div class="container">
+                <h3>Alle Pushmessages</h3>
+                <hr class="style13">
+    </div>
 
 @if(!$pushmessages->isEmpty())         
     <form action="/deletepushmessage" method="post">

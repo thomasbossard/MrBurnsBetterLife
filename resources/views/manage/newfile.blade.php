@@ -34,8 +34,9 @@
 
 @if(!$users->isEmpty())
 
-    <div class="container">
-        <h3>Neues Dokument hinzufügen</h3>
+     <div class="container">
+            <h3>Neues Dokument hinzufügen</h3>
+            <hr class="style13">
     </div>
     
     <div class="container">
@@ -75,16 +76,16 @@
 
 
 
-<div class="container" style="margin-bottom: 25px;">
+<div class="container" style="margin-bottom: 50px;">
     <form action="/newfile" id="newfile" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <button class="btn btn-primary" type="submit">Datei hochladen</button>
     </form>
 </div>
 
-
-<div class="container" style="padding-top: 50px;">
-    <h3>Alle Dokumente</h3>
+<div class="container">
+            <h3>Alle Dokumente</h3>
+            <hr class="style13">
 </div>
 
        
@@ -92,7 +93,7 @@
                 {{ csrf_field() }}
                 
                 
-            <div class="container" style="margin-bottom: 25px;">
+            <div class="container" style="margin-bottom: 10px;">
                 <div class="table-responsive">
                     <table class="table">
                         <thead>

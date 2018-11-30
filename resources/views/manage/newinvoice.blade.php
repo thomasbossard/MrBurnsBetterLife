@@ -35,7 +35,8 @@
 @if(!$users->isEmpty())
 
     <div class="container">
-        <h3>Neue Rechnung erfassen</h3>
+            <h3>Neuen Rechnung erfassen</h3>
+            <hr class="style13">
     </div>
     
     <div class="container">

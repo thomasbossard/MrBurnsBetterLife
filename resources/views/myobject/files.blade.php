@@ -1,15 +1,14 @@
 @extends('layouts.app')
 @section('content')
 
-
-
-    <div class="container" style="padding-bottom: 25px;">
-        <h4>Meine Dokumente &nbsp;<img class="img-fluid" src="assets/img/documents.svg" width="32" height="32"></h4>
+    <div class="container">
+        <h3>Meine Dokumente &nbsp;<img class="img-fluid" src="assets/img/documents.svg" width="32" height="32"></h3>
+        <hr class="style13">
     </div>
 
 
     <div class="container">
-        <div class="table-responsive" style="margin-bottom: 50px;">
+        <div class="table-responsive" style="margin-bottom: 25px;">
             <table class="table">
                 <thead>
                     <tr>

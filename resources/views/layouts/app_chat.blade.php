@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/css/tenant_font_design.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/Team-Boxed.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/button.css')}}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/hr.css')}}">
     
     @yield('css')
         
