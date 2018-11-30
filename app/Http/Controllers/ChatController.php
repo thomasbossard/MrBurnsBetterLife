@@ -12,10 +12,14 @@ class ChatController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { 
+        if (Auth::check() and User::find(Auth::id())->usertype_id == 1) {
+                
         $friends = Auth::user()->friends();
         return view('chat.index')->withFriends($friends);
-    }
+        } else {
+        return view('pages.error')->with('errormessage', 'Kein Zugriff.');
+    }}
     /**
      * Show the form for creating a new resource.
      *
@@ -43,9 +47,18 @@ class ChatController extends Controller
      */
     public function show($id)
     {
+       
+          if (Auth::check() and User::find(Auth::id())->usertype_id == 1) {     
         $friend = User::find($id);
         return view('chat.show')->withFriend($friend);
-    }
+     } else {
+         if ($id == 4 or $id == 5) {
+             $friend = User::find($id);
+        return view('chat.show')->withFriend($friend);
+         } else{
+           return view('pages.error')->with('errormessage', 'Kein Zugriff.');  
+         }
+    }}
     /**
      * Show the form for editing the specified resource.
      *
