@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Maatwebsite\Excel\Facades\Excel;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
 use App\FormContent;
-use App\Exports\FormContentsExport;
-
 
 class FormContentsController extends Controller
 {
@@ -69,10 +65,5 @@ class FormContentsController extends Controller
         } else {
             return redirect()->back();
         }
-    }
-    
-    public function export() 
-    {
-        return Excel::download(new FormContentsExport, 'FormContent.xlsx');
     }
 }
