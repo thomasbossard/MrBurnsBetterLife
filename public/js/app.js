@@ -57749,7 +57749,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n.panel-block[data-v-77176efa] {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    width: 100%;\n    border: none;\n    padding: 0;\n}\ninput[data-v-77176efa] {\n     border-radius: 0;\n    width: auto;\n    margin: 2px;\n}\n.auto-width[data-v-77176efa] {\n    width: auto;\n}\n", ""]);
+exports.push([module.i, "\n.panel-block[data-v-77176efa] {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    width: 100%;\n    border: none;\n    padding: 0;\n}\ninput[data-v-77176efa] {\n     border-radius: 0;\n    width: 100%;\n    margin: 2px;\n}\n.auto-width[data-v-77176efa] {\n    width: auto;\n}\n", ""]);
 
 // exports
 

@@ -52,11 +52,11 @@
                            <?php
                             $user = Auth::user();
                             if ($user->usertype_id == 2): ?> 
-                         <li class="nav-item" role="presentation"><a class="nav-link" href="myobject">Mein Objekt</a></li>
-                           <?php elseif ($user->usertype_id == 1): ?> 
-                         <li class="nav-item" role="presentation"><a class="nav-link" href="manage">Verwalten</a></li>
+                         <li class="nav-item" role="presentation"><a class="nav-link" href="/myobject">Mein Objekt</a></li>
+                           <?php elseif ($user->usertype_id == 1): ?>   
+                         <li class="nav-item" role="presentation"><a class="nav-link" href="/manage">Verwalten</a></li>
                           <?php elseif ($user->usertype_id == 3): ?> 
-                         <li class="nav-item" role="presentation"><a class="nav-link" href="work">Bearbeiten</a></li>
+                         <li class="nav-item" role="presentation"><a class="nav-link" href="/work">Bearbeiten</a></li>
                           <?php endif; ?>
                                     
                             @endauth

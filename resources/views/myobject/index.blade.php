@@ -13,10 +13,10 @@
                     <h4 class="name"><br><a href="files" class="action" style="color:black">Dokumente</a><br><br></h4>                    
                 </div>
                 <div class="col-sm-6 col-md-4 item"><a href="chat/5"><img class="img-fluid" src="assets/img/chat.svg" style="width: 200px;height: 200px;"></a>
-                    <h4 class="name"><br><a href="chat" class="action" style="color:black">Nachrichten Hauswart</a><br><br></h4>
+                    <h4 class="name"><br><a href="chat" class="action" style="color:black">Chat Nachrichten Hauswart</a><br><br></h4>
                 </div>
                 <div class="col-sm-6 col-md-4 item"><a href="chat/4"><img class="img-fluid" src="assets/img/chat.svg" style="width: 200px;height: 200px;"></a>
-                    <h4 class="name"><br><a href="chat" class="action" style="color:black">Nachrichten Verwaltung</a><br><br></h4>
+                    <h4 class="name"><br><a href="chat" class="action" style="color:black">Chat Nachrichten Verwaltung</a><br><br></h4>
                 </div>
             </div>
         </div>

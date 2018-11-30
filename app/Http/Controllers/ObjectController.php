@@ -54,7 +54,7 @@ class ObjectController extends Controller
                     $openamount += $inv->amount;
                 }
                 if ($rentableobject->isEmpty()){
-                return view('pages.error')->with('errormessage', 'Kein Haus zugewiesen. Melden Sie sich bitte bei der Verwaltung.');
+                return view('pages.error')->with('errormessage', 'Leider wurde Ihnen noch kein Objekt zugewiesen. Melden Sie sich bitte bei der Verwaltung.');
                 } else {
                   return view('myobject.index', compact('manager', 'groundkeeper', 'rentableobject', 'pushmessage', 'openamount'));
          }     } }else {

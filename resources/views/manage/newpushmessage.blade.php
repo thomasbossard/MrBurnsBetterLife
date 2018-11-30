@@ -48,7 +48,7 @@
   <div class="container">
     <form action="/newpushmessage" id="newpushmessage" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
-        <button class="btn btn-primary" type="submit">Neuen Pushmessage erfassen</button>
+        <button class="btn btn-primary" type="submit">Neue Pushmessage erfassen</button>
     </form>
     </div>
 

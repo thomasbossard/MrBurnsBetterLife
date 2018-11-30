@@ -44,7 +44,7 @@
     }
     input {
          border-radius: 0;
-        width: auto;
+        width: 100%;
         margin: 2px;
       
         }

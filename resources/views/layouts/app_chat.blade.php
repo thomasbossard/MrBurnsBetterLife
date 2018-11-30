@@ -45,11 +45,11 @@
                            <?php
                             $user = Auth::user();
                             if ($user->usertype_id == 2): ?> 
-                         <li class="nav-item" role="presentation"><a class="nav-link" href="myobject">Mein Objekt</a></li>
+                         <li class="nav-item" role="presentation"><a class="nav-link" href="/myobject">Mein Objekt</a></li>
                            <?php elseif ($user->usertype_id == 1): ?> 
-                         <li class="nav-item" role="presentation"><a class="nav-link" href="manage">Verwalten</a></li>
+                         <li class="nav-item" role="presentation"><a class="nav-link" href="/manage">Verwalten</a></li>
                           <?php elseif ($user->usertype_id == 3): ?> 
-                         <li class="nav-item" role="presentation"><a class="nav-link" href="work">Bearbeiten</a></li>
+                         <li class="nav-item" role="presentation"><a class="nav-link" href="/work">Bearbeiten</a></li>
                           <?php endif; ?>
                                     
                             @endauth
@@ -107,9 +107,9 @@
     
         <!-- Scripts -->
     <script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
+     <script src="{{ URL::asset('/js/app.js') }}"></script>
     <script src="{{ URL::asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-    <script src="{{ URL::asset('assets/js/theme.js')}}"></script>
-    <script src="{{ URL::asset('/js/app.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/theme.js')}}"></script>   
     
 </html>
