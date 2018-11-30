@@ -52,6 +52,14 @@
             <div class="container" style="padding-bottom: 50px;"><button class="btn btn-primary" type="submit">Nachricht verarbeiten</button></div>                  
     </form>
 @endif
+
+<div class="container">
+    <form action="/exportform" id="exportform" method="post" enctype="multipart/form-data">
+         {{ csrf_field() }}
+        <button class="btn btn-primary" type="submit">Exportieren</button>
+    </form>
+    </div>
+    
     
 @if($allnewformcontents->isEmpty()) 
     <div class="container">
