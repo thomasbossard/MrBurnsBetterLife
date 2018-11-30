@@ -96,8 +96,9 @@ class InvoicesController extends Controller
             'description' => 'required'
         ]);
         if(!($validator->fails())){
-            $path = $request->file('fileupload')->store('public');
-
+            $filename = $request->file('fileupload')->getClientOriginalName();
+            $path = $request->file('fileupload')->storeAs('public', $filename);
+            
             $invoice = new Invoice;
             $invoice->amount  = $request->amount;
             $invoice->description  = $request->description;
