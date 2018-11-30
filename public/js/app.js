@@ -57749,7 +57749,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n.panel-block[data-v-77176efa] {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    width: 100%;\n    border: none;\n    padding: 0;\n}\ninput[data-v-77176efa] {\n     border-radius: 0;\n    width: 100%;\n    margin: 2px;\n}\n.auto-width[data-v-77176efa] {\n    width: auto;\n}\n", ""]);
+exports.push([module.i, "\n.panel-block[data-v-77176efa] {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    width: 100%;\n    border: none;\n    padding: 0;\n}\ninput[data-v-77176efa] {\n     border-radius: 0;\n    \n    margin: 2px;\n}\n.test[data-v-77176efa] {\n    border-radius: 0;\n    width: 100%;\n    margin: 2px;\n}\n.auto-width[data-v-77176efa] {\n    width: auto;\n}\n", ""]);
 
 // exports
 
@@ -57760,6 +57760,15 @@ exports.push([module.i, "\n.panel-block[data-v-77176efa] {\n    -webkit-box-orie
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -57808,57 +57817,63 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "panel-block field" }, [
-    _c(
-      "div",
-      { staticClass: "abc", staticStyle: { "margin-bottom": "10px" } },
-      [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.chat,
-              expression: "chat"
-            }
-          ],
-          staticClass: "test",
-          attrs: { type: "text" },
-          domProps: { value: _vm.chat },
-          on: {
-            keyup: function($event) {
-              if (
-                !("button" in $event) &&
-                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-              ) {
-                return null
+    _c("div", { staticClass: "row text-left" }, [
+      _c("div", { staticClass: "col-md-10" }, [
+        _c(
+          "div",
+          { staticClass: "abc", staticStyle: { "margin-bottom": "10px" } },
+          [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.chat,
+                  expression: "chat"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text" },
+              domProps: { value: _vm.chat },
+              on: {
+                keyup: function($event) {
+                  if (
+                    !("button" in $event) &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.sendChat($event)
+                },
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.chat = $event.target.value
+                }
               }
-              return _vm.sendChat($event)
-            },
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.chat = $event.target.value
-            }
-          }
-        })
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass: "control auto-width",
-        staticStyle: { "margin-bottom": "10px" }
-      },
-      [
-        _c("input", {
-          staticClass: "btn btn-primary",
-          attrs: { type: "button", value: "Senden" },
-          on: { click: _vm.sendChat }
-        })
-      ]
-    )
+            })
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-2 text-right" }, [
+        _c(
+          "div",
+          {
+            staticClass: "control auto-width",
+            staticStyle: { "margin-bottom": "10px" }
+          },
+          [
+            _c("input", {
+              staticClass: "btn btn-primary",
+              attrs: { type: "button", value: "Senden" },
+              on: { click: _vm.sendChat }
+            })
+          ]
+        )
+      ])
+    ])
   ])
 }
 var staticRenderFns = []

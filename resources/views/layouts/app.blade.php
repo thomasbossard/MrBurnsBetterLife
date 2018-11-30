@@ -39,7 +39,7 @@
 
     <body>
         <div id="app">
-            <section class="portfolio-block block-intro" style="padding: 50px;">
+            <section class="portfolio-block block-intro" style="padding: 35px;">
                 <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
                    <div class="container"><a class="navbar-brand logo" href="/">Mr Burns Betterlife AG</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                      <div 

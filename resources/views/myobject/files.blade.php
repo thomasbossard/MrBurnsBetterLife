@@ -1,8 +1,12 @@
 @extends('layouts.app')
 @section('content')
 
+    <div class="container" style="margin-bottom: 10px;">
+        <a href="/myobject" class="btn btn-link"><i class="fa fa-reply"></i>&nbsp;&nbsp;Zurück zu Objekt</a>
+    </div>
+
     <div class="container">
-        <h3>Meine Dokumente &nbsp;<img class="img-fluid" src="assets/img/documents.svg" width="32" height="32"></h3>
+        <h3>Meine Dokumente</h3>
         <hr class="style13">
     </div>
 
@@ -28,8 +32,5 @@
             </table>
         </div>
     </div>
-
-    <div class="container"><a href="/myobject" class="btn btn-primary">Zurück zu Verwalten...</a></div>
-
 
 @endsection

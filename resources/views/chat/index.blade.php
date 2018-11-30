@@ -3,6 +3,26 @@
 
 @section('content')
 
+
+    <?php  $user = Auth::user();
+    
+                    if ($user->usertype_id == 1): ?>     
+                        
+                            <div class="container" style="margin-bottom: 10px;">
+                                <a href="/manage" class="btn btn-link"><i class="fa fa-reply"></i>&nbsp;&nbsp;Zurück zu Verwalten</a>
+                            </div>
+                        
+                    <?php elseif ($user->usertype_id == 3): ?>  
+                        
+                        <div class="container" style="margin-bottom: 10px;">
+                                <a href="/work" class="btn btn-link"><i class="fa fa-reply"></i>&nbsp;&nbsp;Zurück zu Bearbeiten</a>
+                        </div>
+
+                    <?php endif; ?>
+
+
+
+
     <div class="container">
         <h3>Chat Nachrichten</h3>
         <hr class="style13">

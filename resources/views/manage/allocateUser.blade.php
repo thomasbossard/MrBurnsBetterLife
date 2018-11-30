@@ -10,6 +10,10 @@
 <html>
 @if(!$users_and_objects->isEmpty())
 
+        <div class="container" style="margin-bottom: 10px;">
+            <a href="/manage" class="btn btn-link"><i class="fa fa-reply"></i>&nbsp;&nbsp;Zurück zu Verwalten</a>
+        </div>
+
         <div class="container">
             <h3>Bestehende Zuweisungen</h3>
             <hr class="style13">
@@ -105,8 +109,6 @@
         <div class="container"><button class="btn btn-primary" type="submit">Zuweisung übernehmen</button></div>
     </form>
 @endif
-
-<div class="container" style="padding-top: 25px;"><a href="/manage" class="btn btn-primary">Zurück zu Verwalten...</a></div>
 
 </html>
 

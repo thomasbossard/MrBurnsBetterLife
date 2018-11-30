@@ -34,6 +34,10 @@
 
 @if(!$users->isEmpty())
 
+    <div class="container" style="margin-bottom: 10px;">
+        <a href="/manage" class="btn btn-link"><i class="fa fa-reply"></i>&nbsp;&nbsp;Zurück zu Verwalten</a>
+    </div>
+
      <div class="container">
             <h3>Neues Dokument hinzufügen</h3>
             <hr class="style13">
@@ -118,13 +122,10 @@
                 </div>      
             </div>
                                
-            <div class="container" style="margin-bottom: 25px;"><button class="btn btn-primary" type="submit">Datei löschen</button></div>
+            <div class="container"><button class="btn btn-primary" type="submit">Datei löschen</button></div>
 
     </form>
 
-
-
-<div class="container"><a href="/manage" class="btn btn-primary">Zurück zu Verwalten...</a></div>
 
 @endif
 

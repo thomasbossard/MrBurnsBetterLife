@@ -6,6 +6,11 @@
 	</div>
 @endif  
 <body>
+    
+    <div class="container" style="margin-bottom: 10px;">
+        <a href="/manage" class="btn btn-link"><i class="fa fa-reply"></i>&nbsp;&nbsp;Zurück zu Verwalten</a>
+    </div>
+    
     <div class="container">
         <h3>Nachrichten von Kontaktformular</h3>
         <hr class="style13">
@@ -89,9 +94,6 @@
         </div>
     </div>
 @endif
-
-
-<div class="container"><a href="/manage" class="btn btn-primary">Zurück zu Verwalten...</a></div>
 
 </body>           
 @endsection

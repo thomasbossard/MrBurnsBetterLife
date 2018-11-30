@@ -34,8 +34,12 @@
 
 @if(!$users->isEmpty())
 
+    <div class="container" style="margin-bottom: 10px;">
+        <a href="/manage" class="btn btn-link"><i class="fa fa-reply"></i>&nbsp;&nbsp;Zurück zu Verwalten</a>
+    </div>
+
     <div class="container">
-            <h3>Neuen Rechnung erfassen</h3>
+            <h3>Neue Rechnung erfassen</h3>
             <hr class="style13">
     </div>
     
@@ -118,7 +122,8 @@
                     <tr>
                         <th>Vorname</th>
                         <th>Name</th>
-                        <th>aktuelle unverrechnete Heiz- und Nebenkosten</th>
+                        <th>Unverrechnete Heiz- und Nebenkosten</th>
+                        <th>Unverrechnete Heiz- und Nebenkosten definieren</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -126,10 +131,9 @@
                     <tr>
                         <td>{{$user->name}} </td>
                         <td>{{$user->givenname}}</td>
+                        <td>{{$user->currentadditionalcosts}}</td>
                         <td>
-                            <div class="custom-control custom-radio">
-                                <input type="number" class="form-control" name="{{$user->id}}" value="{{$user->currentadditionalcosts}}">
-                            </div>                            
+                            <input type="number" class="form-control" placeholder="" name="{{$user->id}}" value="{{$user->currentadditionalcosts}}">                                                       
                         </td>
                     </tr>
                     @endforeach
@@ -143,11 +147,6 @@
             </div>
 
         </form>
-
-<br>
-<br>
-
-<div class="container"><a href="/manage" class="btn btn-primary">Zurück zu Verwalten...</a></div>
 
 @endif
 

@@ -2,6 +2,28 @@
 
 @section('content')
 
+
+                     <?php  $user = Auth::user();
+                        if ($user->usertype_id == 2): ?>     
+                        
+                        <div class="container" style="margin-bottom: 10px;">
+                            <a href="/myobject" class="btn btn-link"><i class="fa fa-reply"></i>&nbsp;&nbsp;Zurück zu Objekt</a>
+                        </div>
+                        
+                    <?php else: ?>  
+                        
+                        <div class="container" style="margin-bottom: 10px;">
+                            <a href="/chat" class="btn btn-link"><i class="fa fa-reply"></i>&nbsp;&nbsp;Zurück zu Chatübersicht</a>
+                        </div>
+                        
+                    <?php endif; ?>
+
+
+
+    
+
+    
+
     
     <meta name="friendId" content="{{ $friend->id }}">    
       
@@ -19,13 +41,5 @@
             </div>
         </div>
     </div>
-    
-                     <?php  $user = Auth::user();
-                        if ($user->usertype_id == 2): ?>     
-                        <div class="container" style="padding-top:10px"><a href="{{ url('/myobject') }}" class="btn btn-primary">Zurück zu Objekt...</a></div>
-                        
-                    <?php else: ?>  
-                        <div class="container" style="padding-top:10px"><a href="{{ url('/chat') }}" class="btn btn-primary">Zurück zu Chatübersicht...</a></div>
-                    <?php endif; ?>
     
 @endsection

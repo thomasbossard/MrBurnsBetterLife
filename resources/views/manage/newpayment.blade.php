@@ -10,6 +10,10 @@
 
 @if(!$users->isEmpty())
 
+    <div class="container" style="margin-bottom: 10px;">
+        <a href="/manage" class="btn btn-link"><i class="fa fa-reply"></i>&nbsp;&nbsp;Zurück zu Verwalten</a>
+    </div>
+
     <div class="container">
             <h3>Neuen Zahlungseingang erfassen</h3>
             <hr class="style13">
@@ -84,7 +88,7 @@
                 </div>
             </div>                
                                
-            <div class="container" style="margin-bottom: 25px;"><button class="btn btn-primary" type="submit">Rechnung verarbeiten</button></div>
+            <div class="container"><button class="btn btn-primary" type="submit">Rechnung verarbeiten</button></div>
 
     </form>
 @endif
@@ -92,11 +96,9 @@
 
 
 @if($allunpaidinvoices->isEmpty())    
-    <div class="container" style="margin-bottom: 25px;">
+    <div class="container">
         Keine offenen Rechnungen.
     </div>
 @endif
-
-<div class="container"><a href="/manage" class="btn btn-primary">Zurück zu Verwalten...</a></div>
 
 @endsection

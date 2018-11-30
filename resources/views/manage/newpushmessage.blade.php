@@ -6,9 +6,30 @@
 		{{ session('message') }}
 	</div>
 @endif 
+<input type="submit" value="" />
+
+
+
+
+<?php  $user = Auth::user();
+    
+                    if ($user->usertype_id == 1): ?>     
+                        
+                            <div class="container" style="margin-bottom: 10px;">
+                                <a href="/manage" class="btn btn-link"><i class="fa fa-reply"></i>&nbsp;&nbsp;Zurück zu Verwalten</a>
+                            </div>
+                        
+                    <?php elseif ($user->usertype_id == 3): ?>  
+                        
+                        <div class="container" style="margin-bottom: 10px;">
+                                <a href="/work" class="btn btn-link"><i class="fa fa-reply"></i>&nbsp;&nbsp;Zurück zu Bearbeiten</a>
+                        </div>
+
+                    <?php endif; ?>
+
 
     <div class="container">
-                <h3>Neue Pushmessage erfassen</h3>
+                <h3>Neue Pushmessage erstellen</h3>
                 <hr class="style13">
     </div>
 
@@ -98,12 +119,10 @@
 
 
 @if($pushmessages->isEmpty())    
-    <div class="container" style="margin-bottom: 25px;">
+    <div class="container">
         Keine Pushmessages.
     </div>
 @endif
 
-
-<div class="container"><a href="/manage" class="btn btn-primary">Zurück zu Verwalten...</a></div>
 
 @endsection
