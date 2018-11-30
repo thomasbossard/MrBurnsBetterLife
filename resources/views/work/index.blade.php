@@ -7,15 +7,15 @@
     </div>
 
     <div style="text-align:center">
-    <div class="article-list">
+    <div class="team-boxed">
         <div class="container">
             <div class="intro"></div>
-            <div class="row articles">
-                <div class="col-sm-6 col-md-4 item"><a href="/newpushmessage"><img class="img-fluid" src="assets/img/send.svg" style="width: 100px;height: 100px;"></a>
-                    <h4 class="name"><a href="/newpushmessage" class="action" style="color:black">Pushnachrichten</a><br></h4>
+            <div class="row people">
+                <div class="col-sm-6 col-md-4 item"><div class="box"><a href="/newpushmessage"><img class="img-fluid" src="assets/img/send.svg" style="width: 100px;height: 100px;"></a>
+                    <h4 class="name"><a href="/newpushmessage" class="action" style="color:black">Pushnachrichten</a><br></h4></div>
                 </div>
-                <div class="col-sm-6 col-md-4 item"><a href="/chat"><img class="img-fluid" src="assets/img/chat.svg" style="width: 100px;height: 100px;"></a>
-                    <h4 class="name"><a href="/chat" class="action" style="color:black">Chat Nachrichten</a><br></h4>
+                <div class="col-sm-6 col-md-4 item"><div class="box"><a href="/chat"><img class="img-fluid" src="assets/img/chat.svg" style="width: 100px;height: 100px;"></a>
+                    <h4 class="name"><a href="/chat" class="action" style="color:black">Chat Nachrichten</a><br></h4></div>
                 </div>
             </div>
         </div>
