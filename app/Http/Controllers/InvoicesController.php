@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Invoice;
 use Illuminate\Support\Facades\DB;
 use Auth;
+use App\User;
 use Storage;
 use Validator;
 
@@ -120,5 +121,17 @@ class InvoicesController extends Controller
     {
         $invoice = Invoice::find($id);
         return Storage::download($invoice->filepath);
+    }
+    
+    public function storenewadditionalcosts(Request $request)
+    {
+        foreach($request->except('_token') as $key => $value){
+            $user = User::find($key);
+
+            $user->currentadditionalcosts = $value;
+
+            $user->save();
+        }
+        return redirect()->back()->with('message', 'neue unverrechnete Heiz und Nebenkosten gespeichert');
     }
 }

@@ -35,7 +35,7 @@
 @if(!$users->isEmpty())
 
     <div class="container">
-        <h3>Neuen Rechnung erfassen</h3>
+        <h3>Neue Rechnung erfassen</h3>
     </div>
     
     <div class="container">
@@ -95,7 +95,56 @@
             {{ csrf_field() }}
             <button class="btn btn-primary" type="submit">Rechnung erfassen</button>
     </form>
+    
+    
+<br>
+    
+    <div class="container">
+        <h3>Aktuelle unverrechnete Heiz und Nebenkosten bearbeiten</h3>
+    </div>
+    
+    
 </div>
+
+        <form action="/newadditionalcosts" method="post">
+            {{ csrf_field() }}
+            
+            
+            <div class="container">
+            <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Vorname</th>
+                        <th>Name</th>
+                        <th>aktuelle unverrechnete Heiz- und Nebenkosten</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($users as $user)
+                    <tr>
+                        <td>{{$user->name}} </td>
+                        <td>{{$user->givenname}}</td>
+                        <td>
+                            <div class="custom-control custom-radio">
+                                <input type="number" class="form-control" name="{{$user->id}}" value="{{$user->currentadditionalcosts}}">
+                            </div>                            
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            </div>
+            </div>
+            
+            <div class="container">
+                <button class="btn btn-primary" type="submit">Speichern</button>
+            </div>
+
+        </form>
+
+<br>
+<br>
 
 <div class="container"><a href="/manage" class="btn btn-primary">Zurück zu Verwalten...</a></div>
 
