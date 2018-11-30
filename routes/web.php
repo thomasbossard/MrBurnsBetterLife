@@ -51,3 +51,4 @@ Route::get('/files', 'FilesController@index');
 Route::get('/newfile', 'FilesController@newfile');
 Route::post('/newfile', 'FilesController@storenewfile');
 Route::post('/deletefile', 'FilesController@deletefile');
+Route::get('/downloadfile/{id}', 'FilesController@downloadfile');

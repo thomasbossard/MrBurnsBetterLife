@@ -21,7 +21,7 @@
                     
                     @foreach ($file as $file)
                     <tr>                                            
-                        <td><a href="/downloadinvoice/{{$file->id}}">Herunterladen</a></td>
+                        <td><a href="/downloadfile/{{$file->id}}">Herunterladen</a></td>
                         <td>{{$file->filename}}</td>
                     </tr>
                     @endforeach
