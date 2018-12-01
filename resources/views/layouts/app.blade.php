@@ -33,7 +33,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
     <script src="{{ URL::asset('assets/js/theme.js')}}"></script>
         
-    
+    @yield('js')
     
 </head>
 
@@ -100,10 +100,6 @@
             @yield('content')
         </main>
 
-    
-    @yield('js')
-    
-    
                             
     <footer class="page-footer">
         <div class="container">

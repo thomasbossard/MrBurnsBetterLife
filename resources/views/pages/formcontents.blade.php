@@ -1,4 +1,34 @@
 @extends('layouts.app')
+
+@section('js')
+
+<script type="text/javascript">
+    function validateForm()
+    {
+        var firstname=document.forms["contactform"]["firstname"].value;
+        var givenname=document.forms["contactform"]["givenname"].value;
+        var subject=document.forms["contactform"]["subject"].value;
+        var text=document.forms["contactform"]["text"].value;
+
+        
+        if (firstname==null || firstname=="",givenname==null || givenname=="",subject==null || subject=="",text==null || text=="")
+        {
+            alert("Bitte füllen Sie alle Felder aus");
+            return false;
+        } 
+        
+        else {
+            
+            return true;
+        }
+        
+        
+    }
+</script>
+
+@endsection
+
+
 @section('content')
         
         @if(session('message'))
@@ -9,7 +39,7 @@
         
 <div class="contact-clean">
  
-        <form method="post">
+        <form method="post" name ="contactform" onsubmit="return validateForm()">
             {{ csrf_field() }}
             <h2 class="text-center">Kontaktieren Sie uns!</h2>
             <div class="form-group"><input class="form-control" type="text" name="firstname" placeholder="Vorname"></div>
