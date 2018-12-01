@@ -48,7 +48,7 @@ class ChatController extends Controller
     public function show($id)
     {
        
-          if (Auth::check() and User::find(Auth::id())->usertype_id == 1) {     
+          if (Auth::check() and User::find(Auth::id())->usertype_id == 1 or Auth::check() and User::find(Auth::id())->usertype_id == 3 ) {     
         $friend = User::find($id);
         return view('chat.show')->withFriend($friend);
      } else {
