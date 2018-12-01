@@ -1,4 +1,4 @@
-@extends('layouts.app_newinvoice')
+@extends('layouts.app_fileupload')
 
 @section('js')
 
