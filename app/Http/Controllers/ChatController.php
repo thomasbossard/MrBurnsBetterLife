@@ -13,7 +13,7 @@ class ChatController extends Controller
      */
     public function index()
     { 
-        if (Auth::check() and User::find(Auth::id())->usertype_id == 1) {
+        if (Auth::check() and User::find(Auth::id())->usertype_id == 1 or Auth::check() and User::find(Auth::id())->usertype_id == 3) {
                 
         $friends = Auth::user()->friends();
         return view('chat.index')->withFriends($friends);
