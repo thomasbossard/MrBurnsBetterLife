@@ -53,3 +53,4 @@ Route::post('/newfile', 'FilesController@storenewfile');
 Route::post('/deletefile', 'FilesController@deletefile');
 Route::get('/downloadfile/{id}', 'FilesController@downloadfile');
 Route::post('/newadditionalcosts', 'InvoicesController@storenewadditionalcosts');
+Route::post('/exportform', 'FormContentsController@export');

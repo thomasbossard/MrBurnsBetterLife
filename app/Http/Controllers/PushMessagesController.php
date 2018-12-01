@@ -25,7 +25,7 @@ class PushMessagesController extends Controller
         if (Auth::check()) {
             $user = Auth::user();
             
-            if ($user->usertype_id == 1){
+            if ($user->usertype_id == 1 or $user->usertype_id == 3){
                 
                 $rentableobject = DB::table('rentableobjects')
                         ->get();
