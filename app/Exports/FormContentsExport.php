@@ -3,6 +3,7 @@ namespace App\Exports;
 
 use Maatwebsite\Excel\Concerns\FromCollection;
 use App\FormContent;
+use Illuminate\Support\Facades\DB;
 
 class FormContentsExport implements FromCollection
 {
@@ -11,6 +12,11 @@ class FormContentsExport implements FromCollection
     */
     public function collection()
     {
-       return FormContent::all();
+        $formcontent= DB::table('formcontents')
+        ->select('firstname', 'givenname', 'email', 'subject', 'text', 'created_at as date')
+        ->where('processed', '=', 0)
+        ->get();
+        
+       return $formcontent;
     }
 }
