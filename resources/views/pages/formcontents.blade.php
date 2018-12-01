@@ -3,22 +3,44 @@
 @section('js')
 
 <script type="text/javascript">
+    
     function validateForm()
     {
-        var firstname=document.forms["contactform"]["firstname"].value;
-        var givenname=document.forms["contactform"]["givenname"].value;
-        var subject=document.forms["contactform"]["subject"].value;
+        var contactform = document.contactform;        
         var text=document.forms["contactform"]["text"].value;
 
         
-        if (firstname==null || firstname=="",givenname==null || givenname=="",subject==null || subject=="",text==null || text=="")
+        if (contactform.firstname.value == "" || contactform.firstname.value == null) {
+            alert("Bitte geben Sie Ihren Vornamen an");
+            return false;
+            
+        }
+        
+        else if (contactform.givenname.value == "" || contactform.givenname.value == null) {
+            alert("Bitte geben Sie Ihren Nachnamen an");
+            return false;
+            
+        }
+        
+        else if (contactform.email.value == "" || contactform.email.value == null) {
+            alert("Bitte geben Sie Ihre Email an");
+            return false;
+            
+        }
+        
+        else if (contactform.subject.value == "" || contactform.subject.value == null) {
+            alert("Bitte geben Sie einen Betreff an");
+            return false;
+            
+        }
+        
+        if (text==null || text=="")
         {
-            alert("Bitte füllen Sie alle Felder aus");
+            alert("Bitte geben Sie eine Nachricht ein");
             return false;
         } 
         
-        else {
-            
+        else{
             return true;
         }
         
@@ -38,7 +60,7 @@
 	@endif 
         
 <div class="contact-clean">
- 
+        
         <form method="post" name ="contactform" onsubmit="return validateForm()">
             {{ csrf_field() }}
             <h2 class="text-center">Kontaktieren Sie uns!</h2>

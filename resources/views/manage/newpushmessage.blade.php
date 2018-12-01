@@ -1,32 +1,4 @@
 @extends('layouts.app')
-
-@section('js')
-
-<script type="text/javascript">
-    function validateForm()
-    {
-        var subject=document.forms["pushmessageform"]["subject"].value;
-        var text=document.forms["pushmessageform"]["text"].value;
-        
-        if (subject==null || subject=="",text==null || text=="")
-        {
-            alert("Bitte füllen Sie alle Felder aus");
-            return false;
-        } 
-        
-        else {
-            
-            return true;
-        }
-        
-        
-    }
-</script>
-
-
-@endsection
-
-
 @section('content')
 
 @if(session('message'))
@@ -56,9 +28,7 @@
                 <h3>Neue Pushmessage erstellen</h3>
                 <hr class="style13">
     </div>
-    
-    <form action="/newpushmessage" id="newpushmessage" method="post" enctype="multipart/form-data" name="pushmessageform" onsubmit="return validateForm()">
-            {{ csrf_field() }}
+
     <div class="container">
         <div class="table-responsive">
             <table class="table">
@@ -75,6 +45,8 @@
                                 @foreach ($rentableobject as $rentableobject)
                                     <option value="{{$rentableobject->id}}">{{$rentableobject->name}}</option>
                                 @endforeach
+                               
+            
                             </select>
                         </td>
                         <td><input class="form-control" type="text" name="subject" form="newpushmessage" placeholder="Betreff"></td>
@@ -91,11 +63,11 @@
     </div>
 
     <div class="container" style="padding-bottom: 50px;">
-        
+        <form action="/newpushmessage" id="newpushmessage" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
             <button class="btn btn-primary" type="submit">Neue Pushmessage erfassen</button>
-        
+        </form>
     </div>
-    </form>
 
     <div class="container">
                 <h3>Alle Pushmessages</h3>
