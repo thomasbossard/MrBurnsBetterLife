@@ -147,6 +147,41 @@
             </div>
 
         </form>
+<br>
+
+    <form action="/deleteinvoice" method="post">
+                {{ csrf_field() }}
+                
+                
+            <div class="container" style="margin-bottom: 10px;">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Vorname</th>
+                                <th>Name</th>
+                                <th>Rechnung</th>
+                                <th>Auswählen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($invoices as $invoice)
+                            <tr>
+                                <td>{{$invoice->name}}</td>
+                                <td>{{$invoice->givenname}}</td>
+                                  <td><a href="/downloadinvoice/{{$invoice->id}}">{{$invoice->description}}</a></td>
+                                <td><input type="checkbox" name="id[]" value="{{$invoice->id}}"></td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>      
+            </div>
+                               
+            <div class="container"><button class="btn btn-primary" type="submit">Rechnung(en) löschen</button></div>
+
+    </form>
+
 
 @endif
 
