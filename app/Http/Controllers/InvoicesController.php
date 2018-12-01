@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Invoice;
+use App\RentableObject;
 use Illuminate\Support\Facades\DB;
 use Auth;
 use App\User;
@@ -69,16 +70,24 @@ class InvoicesController extends Controller
         if (Auth::check()) {
             $user = Auth::user();
             
+            #Gibt alle Users zurück welche einem Object zugeordnet wurden
             if ($user->usertype_id == 1){
-                
                 $users = DB::table('users')
+                        ->join('rentableobjects', 'rentableobjects.id', '=', 'users.rentableobject_id') 
                         ->where('users.usertype_id', '=', 2)
+                        ->select('users.*')
                         ->get();
-                
+
+                #Gibt alle Invoicetypes zurück
                 $invoicetypes = DB::table('invoicetypes')
                         ->get();
                 
-                return view('manage.newinvoice', compact('users', 'invoicetypes'));
+                $invoices = DB::table('invoices')
+                        ->join('users', 'users.id', '=', 'invoices.user_id') 
+                        ->select('invoices.*', 'users.name', 'users.givenname')
+                        ->get();
+                
+                return view('manage.newinvoice', compact('users', 'invoicetypes', 'invoices'));
                 
                 
             } else {
@@ -134,4 +143,18 @@ class InvoicesController extends Controller
         }
         return redirect()->back()->with('message', 'neue unverrechnete Heiz und Nebenkosten gespeichert');
     }
+    
+    
+     public function deleteinvoice(Request $request){
+           if($request->filled('id')){
+            foreach ($request->id as $id){
+                $invoice = Invoice::find($id);
+                $invoice->delete();
+                
+            }
+                    return redirect()->back()->with('message', 'Rechnung(en) gelöscht.');
+            }else {
+            return redirect()->back();
+        
+     }}
 }
