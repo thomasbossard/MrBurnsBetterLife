@@ -17,22 +17,25 @@ class ObjectController extends Controller
             if ($user->usertype_id == 2){
                 
                 $id = Auth::id();
-
+                #Das Objekt für den aktuellen User
                 $rentableobject = DB::table('rentableobjects')
                         ->join('users', 'rentableobjects.id', '=', 'users.rentableobject_id') 
                         ->where('users.id', '=', $id)
                         ->where('users.usertype_id', '=', 2)
                         ->select('rentableobjects.*')
                         ->get();
-
+                
+                #Manager für den aktuellen User       
                 $manager = DB::table('users')
                         ->where('users.usertype_id', '=', 1)
                         ->get();
-
+                
+                #Groundkeeper für den aktuellen User            
                 $groundkeeper = DB::table('users')
                         ->where('users.usertype_id', '=', 3)
                         ->get();
-
+                
+                #alle Pushmessages für den aktuellen User
                 $pushmessage = DB::table('pushmessages')
                         ->join('rentableobjects', 'rentableobjects.id', '=', 'pushmessages.rentableobject_id') 
                         ->join('users', 'rentableobjects.id', '=', 'users.rentableobject_id') 
