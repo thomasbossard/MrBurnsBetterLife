@@ -59,7 +59,7 @@
         <button class="btn btn-primary" type="submit">Exportieren</button>
     </form>
     </div>
-    
+<br>
     
 @if($allnewformcontents->isEmpty()) 
     <div class="container">

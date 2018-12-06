@@ -16,16 +16,16 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Datei</th>
-                        <th>Name</th>                        
+                        <th>Name</th>
+                        <th>Datei</th>                        
                     </tr>
                 </thead>
                 <tbody>
                     
                     @foreach ($file as $file)
-                    <tr>                                            
-                        <td><a href="/downloadfile/{{$file->id}}">Herunterladen</a></td>
+                    <tr>    
                         <td>{{$file->filename}}</td>
+                        <td><a href="/downloadfile/{{$file->id}}">Herunterladen</a></td>
                     </tr>
                     @endforeach
                 </tbody>
