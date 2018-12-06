@@ -136,12 +136,19 @@ class InvoicesController extends Controller
     {
         foreach($request->except('_token') as $key => $value){
             $user = User::find($key);
+            
+            if(!(is_null($value))){
+                $user->currentadditionalcosts = $value;
 
-            $user->currentadditionalcosts = $value;
+                $user->save();
+            }
 
-            $user->save();
-        }
+            else {
+                return redirect()->back()->with('message', 'Bitte alle Felder richtig ausfüllen!');
+            }
+        } 
         return redirect()->back()->with('message', 'neue unverrechnete Heiz und Nebenkosten gespeichert');
+        
     }
     
     
