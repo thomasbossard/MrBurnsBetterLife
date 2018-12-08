@@ -8,8 +8,8 @@
             <div class="container" style="background-color: #ffffff;">
                 <div class="avatar" style="background-image: url(&quot;assets/img/Mr.%20Burns.png&quot;);"></div>
                 <div class="about-me">
-                    <p>Hallo! Ich bin&nbsp;<strong>Mr Burns</strong>, Eigentümer der Mr Burns Betterlife AG. Wir vermieten die schönsten Anwesen, Häuser und Wohnungen in ganz Springfield und dies zu besten Konditionen.</p><a class="btn btn-outline-primary"
-                        role="button" href="rentableobjects">Zu den Objekten</a></div>
+                    <p>Hallo! Ich bin&nbsp;<strong>Mr Burns</strong>, Eigentümer der Mr Burns Betterlife AG. Wir vermieten die schönsten Anwesen, Häuser und Wohnungen in ganz Springfield und dies zu besten Konditionen.</p>
+                </div>
             </div>
         </section>
         <section class="portfolio-block photography">

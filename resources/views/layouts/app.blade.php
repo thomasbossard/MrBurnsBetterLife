@@ -46,7 +46,6 @@
                          class="collapse navbar-collapse" id="navbarNav">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item" role="presentation"><a class="nav-link" href="/">Startseite</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="/rentableobjects">Objekte</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link" href="/about">Über uns</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link" href="/contact">Kontakt</a></li>
                             
@@ -103,7 +102,7 @@
                             
     <footer class="page-footer">
         <div class="container">
-            <div class="links"><a href="about">Über uns</a><a href="contact">Kontakt</a><a href="rentableobjects">Objekte</a></div>
+            <div class="links"><a href="about">Über uns</a><a href="contact">Kontakt</a></div>
             <div class="social-icons"><a href="https://www.facebook.com" target="_blank"><i class="icon ion-social-facebook"></i></a><a href="https://www.instagram.com" target="_blank"><i class="icon ion-social-instagram-outline"></i></a><a href="https://www.twitter.com" target="_blank"><i class="icon ion-social-twitter"></i></a></div>
         </div>
     </footer>
