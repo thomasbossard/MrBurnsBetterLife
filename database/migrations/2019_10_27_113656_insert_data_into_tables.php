@@ -36,8 +36,8 @@ class InsertDataIntoTables extends Migration
             ['name' => "Waylon", 'givenname' => "Smithers", 'email' => "waylon.smithers@simpsons.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1"],
             ['name' => "Homer", 'givenname' => "Simpson", 'email' => "homer.simpson@simpsons.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "2"],
             ['name' => "Ned", 'givenname' => "Flanders", 'email' => "ned.flanders@simpsons.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "3"],
-            ['name' => "Cletus", 'givenname' => "Spuckler", 'email' => "Cletus.Spuckler@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "3", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1"],
-            ['name' => "Lisa", 'givenname' => "Simpson", 'email' => "lisa.simpson@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "1", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1"]
+            ['name' => "Cletus", 'givenname' => "Spuckler", 'email' => "Cletus.Spuckler@simpsons.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "3", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1"],
+            ['name' => "Lisa", 'givenname' => "Simpson", 'email' => "lisa.simpson@simpsons.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "1", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1"]
             
         ]);
         
