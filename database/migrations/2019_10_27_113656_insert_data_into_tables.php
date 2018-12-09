@@ -14,10 +14,11 @@ class InsertDataIntoTables extends Migration
     public function up()
     {
         DB::table('rentableobjects')->insert([
-            ['name' => "Wochenendwohnung", 'street' => "Wochenendstrasse", 'housenumber' => "69", 'zipcode' => "4001", 'city' => "Basel", 'costpermonth' => "1200", 'status' => ""],
-            ['name' => "Apartement", 'street' => "Fliederstrasse", 'housenumber' => "13", 'zipcode' => "4800", 'city' => "Zofingen", 'costpermonth' => "1400", 'status' => ""],
-            ['name' => "Loft-Wohnung", 'street' => "Biergasse", 'housenumber' => "3", 'zipcode' => "8000", 'city' => "Zürich", 'costpermonth' => "2200", 'status' => ""]           
-        ]);
+            ['name' => "Bachelor Appartement", 'street' => "Wochenendstrasse", 'housenumber' => "69", 'zipcode' => "4001", 'city' => "Basel", 'costpermonth' => "1200", 'status' => ""],
+            ['name' => "The Happy Gipsy (Wohnung)", 'street' => "Fliederstrasse", 'housenumber' => "13", 'zipcode' => "4800", 'city' => "Zofingen", 'costpermonth' => "1400", 'status' => ""],
+            ['name' => "Loft-Wohnung", 'street' => "Biergasse", 'housenumber' => "3", 'zipcode' => "8000", 'city' => "Zürich", 'costpermonth' => "2200", 'status' => ""],           
+            ['name' => "Simpsons-Haus", 'street' => "Biergasse", 'housenumber' => "5", 'zipcode' => "8000", 'city' => "Zürich", 'costpermonth' => "2500", 'status' => ""]           
+            ]);
         
         DB::table('usertypes')->insert([
             ['label' => "manager"],
@@ -32,9 +33,9 @@ class InsertDataIntoTables extends Migration
         ]);
            
         DB::table('users')->insert([
-            ['name' => "Lukas", 'givenname' => "Kunz", 'email' => "lukas.kunz@zuehlke.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1"],
-            ['name' => "Thomas", 'givenname' => "Bossard", 'email' => "thomasbossard93@gmail.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "2"],
-            ['name' => "Cyrill", 'givenname' => "Füglister", 'email' => "cyrill.fueglister@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "3"],
+            ['name' => "Waylon", 'givenname' => "Smithers", 'email' => "waylon.smithers@simpsons.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1"],
+            ['name' => "Homer", 'givenname' => "Simpson", 'email' => "homer.simpson@simpsons.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "2"],
+            ['name' => "Ned", 'givenname' => "Flanders", 'email' => "ned.flanders@simpsons.com", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "2", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "3"],
             ['name' => "Cletus", 'givenname' => "Spuckler", 'email' => "Cletus.Spuckler@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "3", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1"],
             ['name' => "Lisa", 'givenname' => "Simpson", 'email' => "lisa.simpson@students.fhnw.ch", 'password' => '$2y$10$S1Al624QOlNtTxeQuEXDd.glftmimVuf0NW/omyUI0OeA.jfPaF.y', 'usertype_id' => "1", 'created_at' => "2018-10-27 11:49:00", 'rentableobject_id' => "1"]
             
