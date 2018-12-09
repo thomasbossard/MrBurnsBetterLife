@@ -18,7 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
-Route::get('/services', 'PagesController@services');
 Route::get('/myobject', 'ObjectController@index');
 Route::get('/manage', 'ManagerController@index');
 Route::get('/work', 'WorkController@index');
